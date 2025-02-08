@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
-from accounts.forms import AppUserCreationForm, AppUserChangeForm
+from finalProject.accounts.forms import AppUserCreationForm, AppUserChangeForm
 
 UserModel = get_user_model()
 @admin.register(UserModel)
@@ -19,7 +19,7 @@ class AppUserAdmin(UserAdmin):
         (None, {'fields': ('email', 'password')}),
         ('Personal info', {'fields': ()}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'groups', 'user_permissions')}),
-        ('Important dates', {'fields': ('last_login')}),
+        ('Important dates', {'fields': ('last_login',)}),
     )
 
     add_fieldsets = (
@@ -28,8 +28,8 @@ class AppUserAdmin(UserAdmin):
             {
                 "classes": ("wide",),
                 "fields": ('email', 'password1', 'password2'),
-            }
-        )
+            },
+        ),
     )
 
 

@@ -30,17 +30,21 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+PROJECT_MADE_APPS = [
+    'finalProject.accounts',
+    'finalProject.common',
+    'finalProject.professionals',
+    'finalProject.projects',
+]
+
 INSTALLED_APPS = [
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts.apps.AccountsConfig',
-    'common.apps.CommonConfig',
-    'professionals.apps.ProfessionalsConfig',
-    'projects.apps.ProjectsConfig'
-]
+] + PROJECT_MADE_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
