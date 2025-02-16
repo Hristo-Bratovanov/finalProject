@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        nav {
+            background: #007BFF;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="add_profile.html">Add Profile</a>
+        <a href="profile_details.html">Profile Details</a>
+        <a href="add_project.html">Add Project</a>
+        <a href="project_details.html">Project Details</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button class="button"><i>Logout</i></button>
+        </form>
+    </nav>
+</body>
+</html>
