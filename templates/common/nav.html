@@ -33,16 +33,19 @@
 <body>
     <nav>
         <a href="home.html">Home</a>
-        <a href="add_profile.html">Add Profile</a>
-        <a href="profile_details.html">Profile Details</a>
-        <a href="add_project.html">Add Project</a>
-        <a href="project_details.html">Project Details</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-        <form method="post" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button class="button"><i>Logout</i></button>
-        </form>
+        {% if not request.user.is_authenticated %}
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        {% else %}
+            <a href="profile_details.html">Profile Details</a>
+{#            href="{% url 'profile-details' request.user.pk %}"#}
+            <a href="add_project.html">Add Project</a>
+            <a href="project_details.html">Project Details</a>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button><i>Logout</i></button>
+            </form>
+        {% endif %}
     </nav>
 </body>
 </html>
