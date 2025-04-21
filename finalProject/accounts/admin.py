@@ -5,6 +5,7 @@ from django.contrib.auth.admin import UserAdmin
 from finalProject.accounts.forms import AppUserCreationForm, AppUserChangeForm
 
 UserModel = get_user_model()
+
 @admin.register(UserModel)
 class AppUserAdmin(UserAdmin):
     model = UserModel

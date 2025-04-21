@@ -5,9 +5,9 @@ UserModel = get_user_model()
 
 class Profile(models.Model):
     user = models.OneToOneField(
-    to=UserModel,
-    on_delete=models.CASCADE,
-    primary_key=True,
+        to=UserModel,
+        on_delete=models.CASCADE,
+        primary_key=True,
     )
 
     first_name = models.CharField(max_length=30, blank=True, null=True)
