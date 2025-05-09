@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Details</title>
-</head>
-<body>
+{% extends 'common/base.html' %}}
+{% load static %}
+
+{% block content %}
+
     <h2>Profile Details</h2>
     <div class="profile-container">
 {#        <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">#}
@@ -14,5 +11,5 @@
         <p><strong>Bio:</strong> A passionate web developer.</p>
         <a href="{% url 'profile-edit' request.user.pk %}"><button>Edit Profile</button></a>
     </div>
-</body>
-</html>
+
+{% endblock %}

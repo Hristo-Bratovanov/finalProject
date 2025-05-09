@@ -1,47 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Delete User</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .delete-container {
-      background: white;
-      padding: 20px 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-    .delete-container h2 {
-      margin-bottom: 20px;
-    }
-    .delete-container button {
-      padding: 10px 20px;
-      margin: 5px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .delete-button {
-      background-color: #e74c3c;
-      color: white;
-    }
-    .cancel-button {
-      background-color: #bdc3c7;
-      color: white;
-    }
-  </style>
-</head>
-<body>
+{% extends 'common/base.html' %}}
+{% load static %}
+
+{% block content %}
 
 <div class="delete-container">
   <h2>Are you sure you want to delete this user?</h2>
@@ -54,5 +14,4 @@
   </form>
 </div>
 
-</body>
-</html>
+{% endblock %}
