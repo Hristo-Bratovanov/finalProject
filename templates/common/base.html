@@ -1,9 +1,9 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    {#    <link rel="stylesheet" href="{% static 'css/?.css' %}">#}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation Page</title>
@@ -15,16 +15,19 @@
             background-color: #f4f4f4;
             text-align: center;
         }
+
         nav {
             background: #007BFF;
             padding: 15px;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
         }
+
         nav a:hover {
             text-decoration: underline;
         }
@@ -32,22 +35,24 @@
 </head>
 <body>
 
-    <header>
-        {% include 'common/nav.html' %}
-    </header>
+<header>
+    {% include 'common/nav.html' %}
+</header>
 
-    <main>
+<main>
 
-        {% block content %}
-        {% endblock %}
+    {% block content %}
+    {% endblock %}
 
-    </main>
+</main>
 
-    <div>
-       <span>
-          © 2025 STRUCTURAL DESIGN PROJECTS BY HRISTO BRATOVANOV
-       </span>
-</div>
+<br>
+
+<footer>
+    <span>
+          © 2025 STRUCTURAL DESIGN BY HRISTO BRATOVANOV
+    </span>
+</footer>
 
 </body>
 </html>

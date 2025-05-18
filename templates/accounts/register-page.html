@@ -3,23 +3,27 @@
 {% load placeholder_filter %}
 
 {% block content %}
+    <div>
+        <div class="register-container">
+            <h1>STRUCTURAL DESIGN PORTFOLIO</h1>
+            <h2>Register</h2>
+            <form method="POST">
+                {% csrf_token %}
 
-    <div class="register-container">
-        <h1>Final Project</h1>
-        <h2>Register</h2>
-        <form action="#" method="POST">
-            {% csrf_token %}
-            {{ form.email|placeholder:"Email" }}
-            {{ form.email.errors }}
+                {{ form.email|placeholder:"Email" }}
+                {{ form.email.errors }}
 
-            {{ form.password1|placeholder:"Password" }}
-            {{ form.password1.errors }}
+                {{ form.password1|placeholder:"Password" }}
+                {{ form.password1.errors }}
 
-            {{ form.password2|placeholder:"Repeat Password" }}
-            {{ form.password2.errors }}
+                {{ form.password2|placeholder:"Repeat Password" }}
+                {{ form.password2.errors }}
 
-            <button type="submit">Register</button>
-        </form>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <div class="login-container">
+            <p>If you already have an account, please log in <a href="{% url 'login' %}">here</a></p>
+        </div>
     </div>
-
 {% endblock %}

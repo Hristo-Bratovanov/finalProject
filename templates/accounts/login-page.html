@@ -1,20 +1,23 @@
 {% extends 'common/base.html' %}
 {% load placeholder_filter %}
-{% load static %}
 
 {% block content %}
+    <div class="login-register-container">
+        <div class="login-container">
+            <h1>STRUCTURAL DESIGN EXPERTISE</h1>
+            <h2>Login</h2>
+            <form method="POST">
+                {% csrf_token %}
 
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="#" method="POST">
-            {% csrf_token %}
+                {{ form.errors }}
+                {{ form.username|placeholder:"Email" }}
+                {{ form.password|placeholder:"Password" }}
 
-            {{ form.errors }}
-            {{ form.username|placeholder:"Email" }}
-            {{ form.password|placeholder:"Password" }}
-
-            <button type="submit">Login</button>
-        </form>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="register-container">
+            <p>If you don't have an account, please register <a href="{% url 'register' %}">here</a></p>
+        </div>
     </div>
-
 {% endblock %}

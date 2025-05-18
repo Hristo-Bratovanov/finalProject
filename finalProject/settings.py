@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%w2yyexs@x4r0ih0yob97o#$ex_=m^xj79o#kflbhti9q6&m_t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -137,7 +137,7 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = 'media/'
 
-MEDIA_ROOT = BASE_DIR / 'mediafiles/'
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -146,8 +146,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.AppUser'
 
-LOGIN_REDIRECT_URL = reverse_lazy('nav')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
 
-LOGOUT_REDIRECT_URL = reverse_lazy('nav')
+LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
 

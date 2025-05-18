@@ -6,12 +6,14 @@
         <a href={% url 'login' %}>Login</a>
         <a href={% url 'register' %}>Register</a>
     {% else %}
-        <a href="{% url 'profile-details' request.user.pk %}" }>Profile Details</a>
-        <a href="add_project.html">Add Project</a>
-        <a href="project_details.html">Project Details</a>
-        <form method="post" action="{% url 'logout' %}">
+        <a href="{% url 'profile-details' request.user.pk %}">Profile Details</a>
+        <a href="{% url 'project-add' %}">Add Project</a>
+
+        <form method="post" action="{% url 'logout' %}" style="display:inline;">
             {% csrf_token %}
-            <button><i>Logout</i></button>
+            <button>
+                <i>Logout</i>
+            </button>
         </form>
     {% endif %}
 </nav>

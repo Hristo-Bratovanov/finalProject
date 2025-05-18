@@ -1,23 +1,9 @@
 {% extends 'common/base.html' %}
 {% load static %}
-{% load get_user %}
 
 {% block content %}
-
     <div class="container">
-        <nav>
-            {% get_user as profile %}
-            {% if profile %}
-            {% comment %}{% if request.user.is_authenticated %}{% endcomment %}
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-            <a href={% url 'nav' %}>Navigation</a>
-            {% endif %}
-        </nav>
         <h1>Home Page</h1>
         <p>This is a simple homepage layout. Feel free to customize it!</p>
     </div>
-
 {% endblock %}

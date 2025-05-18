@@ -1,0 +1,40 @@
+{% load static %}
+
+<div class="container">
+    <h1>{{ project.name }}</h1>
+
+    <div class="image-container">
+        <img src="{{ project.picture.url }}" alt="{{ project.name }}">
+    </div>
+
+    <div class="detail-item">
+        <span class="label">Location:</span>
+        <span class="value">{{ project.location }}</span>
+    </div>
+
+    <div class="detail-item">
+        <span class="label">Expenses:</span>
+        <span class="value">{{ project.expenses }}</span>
+    </div>
+
+    {% if project.professional.all %}
+    <div class="detail-item">
+        <span class="label">Professionals Involved:</span>
+        <ul class="professionals">
+            {% for prof in project.professional.all %}
+                <li>{{ prof.name }} ({{ prof.occupation }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <div class="description">
+        <strong>Description:</strong><br>
+        {{ project.description }}
+    </div>
+
+    <div class="actions">
+        <a href="{% url 'project-edit' project.id %}" class="btn btn-edit">Edit</a>
+        <a href="{% url 'project-delete' project.id %}" class="btn btn-delete">Delete</a>
+    </div>
+</div>

@@ -2,14 +2,55 @@
 {% load static %}
 
 {% block content %}
+    <div>
+        <h2>Profile Details</h2>
+        <div class="profile-container">
+            {% if object.profile.profile_picture %}
+                <img src="{{ object.profile.profile_picture }}" alt="img8" />
+            {% else %}
+                <img src="{% static 'images/person.png' %}" alt="img8" />
+            {% endif %}
 
-    <h2>Profile Details</h2>
-    <div class="profile-container">
-{#        <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">#}
-        <p><strong>Username:</strong> johndoe</p>
-        <p><strong>Email:</strong> johndoe@example.com</p>
-        <p><strong>Bio:</strong> A passionate web developer.</p>
-        <a href="{% url 'profile-edit' request.user.pk %}"><button>Edit Profile</button></a>
+            <p><strong>Username:</strong> {{ project.user.profile.get_full_name }}</p>
+
+            {% if request.user.pk == object.pk %}
+                <a href="{% url 'profile-edit' request.user.pk %}"><button>Edit Profile</button></a>
+                <a href="{% url 'profile-delete' request.user.pk %}"><button>Delete Profile</button></a>
+            {% endif %}
+        </div>
+        <div class="data">
+            <span>{{ total_projects_count }}</span>
+            <p>projects</p>
+
+            <span>{{ total_professionals_count }}</span>
+            <p>professionals</p>
+
+            <span>{{ total_likes_count }}</span>
+            <p>likes</p>
+        </div>
+        <h3>{{ object.profile.get_full_name }}</h3>
+        <p>{{ object.email }}</p>
+    </div>
+{#    Start Professional Data Section#}
+    <div>
+        {% for professional in object.professional_set.all %}
+            <a href="{% url 'professional-details' object.profile.get_full_name professional.slug %}">
+                <div class="image">
+                    <img src="{{ professional.personal_photo }}" alt="professional photo">
+                </div>
+            </a>
+            <p>{{ professional.name }}</p>
+        {% endfor %}
     </div>
 
+{#    Start last uploaded project section#}
+    <div>
+        {% for project in object.project_set.all %}
+            <a href="{% url 'project-details' project.pk %}">
+                <img src="{{ project.picture.url }}" alt="project pic">
+            </a>
+        {% empty %}
+            <img class="no projects" src="{% static 'images/no_projects.png' %}" alt="no projects image">
+        {% endfor %}
+    </div>
 {% endblock %}

@@ -13,6 +13,3 @@ class AppUser(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = [] # not really needed
 
     objects = AppUserManager()
-
-    def __str__(self):
-        return self.email
