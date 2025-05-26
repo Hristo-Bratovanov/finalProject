@@ -1,5 +1,4 @@
 from django import forms
-
 from finalProject.common.models import Comment
 
 
@@ -12,10 +11,12 @@ class CommentForm(forms.ModelForm):
             'text': forms.Textarea(attrs={'placeholder': 'Add a comment...'}),
         }
 
-class SearchForm(forms.ModelForm):
-    professional_name = forms.CharField(
+class SearchForm(forms.Form):
+    project_name = forms.CharField(
         required=False,
-        widget=forms.TextInput(attrs={
-            'placeholder': 'Search by professional name...',
-        })
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Search by project name...',
+            }
+        )
     )

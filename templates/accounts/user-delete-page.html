@@ -3,11 +3,11 @@
 {% block content %}
     <div class="delete-container">
       <h1>Are you sure you want to delete your profile?</h1>
-      <form action="{% url 'profile-delete' request.user.pk %}" method="POST">
+      <form action="{% url 'user-delete' request.user.pk %}" method="POST">
           {% csrf_token %}
           <div>
-              <button>Yes</button>
-              <a href="javascript:history.back()">Go Back</a>
+              <button class="btn">Yes</button>
+              <a href="javascript:history.back()" class="btn">Go Back</a>
           </div>
       </form>
     </div>

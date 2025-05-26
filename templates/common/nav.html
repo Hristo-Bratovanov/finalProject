@@ -4,11 +4,10 @@
     <a href={% url 'home' %}>Home</a>
     {% if not request.user.is_authenticated %}
         <a href={% url 'login' %}>Login</a>
-        <a href={% url 'register' %}>Register</a>
+        <a href={% url 'register' %}>Create new profile</a>
     {% else %}
         <a href="{% url 'profile-details' request.user.pk %}">Profile Details</a>
-        <a href="{% url 'project-add' %}">Add Project</a>
-
+        <a href="{% url 'add-project' %}">Add Project</a>
         <form method="post" action="{% url 'logout' %}" style="display:inline;">
             {% csrf_token %}
             <button>

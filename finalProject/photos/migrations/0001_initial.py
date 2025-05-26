@@ -10,20 +10,19 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('projects', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Project',
+            name='Photo',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('project_photo', models.ImageField(upload_to='mediafiles/')),
+                ('photo', models.ImageField(upload_to='mediafiles/')),
                 ('description', models.TextField(blank=True, max_length=500, null=True)),
-                ('location', models.CharField(blank=True, max_length=100, null=True)),
-                ('expenses', models.FloatField()),
-                ('slug', models.SlugField(blank=True, editable=False, null=True, unique=True)),
+                ('created_at', models.DateTimeField(auto_now_add=True, null=True)),
+                ('tagged_projects', models.ManyToManyField(blank=True, to='projects.project')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),

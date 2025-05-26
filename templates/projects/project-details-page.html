@@ -1,7 +1,58 @@
 {% extends 'common/base.html' %}
+{% load static %}
 
 {% block content %}
-    <div class="container">
-        {% include 'common/professional-posts.html' with project_page=True %}
+    <div class="card">
+        <h2>{{ project.name }}</h2>
+
+        <div>
+            <img src="{{ project.personal_photo.url }}" alt="img8">
+        </div>
+
+        <div class="detail-item">
+            <span class="label">Email:</span>
+            <span class="value">{{ project.email }}</span>
+        </div>
+
+        <div class="detail-item">
+            <span class="label">Phone Number:</span>
+            <span class="value">{{ project.phone_number }}</span>
+        </div>
+
+        <div class="detail-item">
+            <span class="label">Occupation:</span>
+            <span class="value">{{ project.occupation }}</span>
+        </div>
+
+        <div class="detail-item">
+            <span class="label">Age:</span>
+            <span class="value">{{ project.age }}</span>
+        </div>
+
+        <div class="detail-item">
+            <span class="label">Projects Completed:</span>
+            <span class="value">{{ project.project_set.count }}</span>
+        </div>
+
+        {% if professional.about_me %}
+            <div class="detail-item">
+                <span class="label">About Me:</span>
+                <div class="value">{{ project.about_me }}</div>
+            </div>
+        {% endif %}
+
+        {% if request.user == project.user %}
+            <div class="actions">
+                <a href="{% url 'professional-edit' "username" project.slug %}">Edit</a>
+                <a href="{% url 'professional-delete' "username" project.slug %}">Delete</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="professional-projects">
+        {% for photo in all_photos %}
+            {% include 'common/project-photos.html' %}
+        {% empty %}
+            <img class="no-photos" src="{% static '/images/no_photos.png' %}" alt="no projects image">
+        {% endfor %}
     </div>
 {% endblock %}

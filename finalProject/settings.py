@@ -9,8 +9,11 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+import os
 
 from pathlib import Path
+
+from decouple import config
 
 from django.urls import reverse_lazy
 
@@ -25,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%w2yyexs@x4r0ih0yob97o#$ex_=m^xj79o#kflbhti9q6&m_t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
@@ -35,8 +38,8 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 PROJECT_MADE_APPS = [
     'finalProject.accounts',
     'finalProject.common',
-    'finalProject.professionals',
     'finalProject.projects',
+    'finalProject.photos',
 ]
 
 INSTALLED_APPS = [
@@ -150,4 +153,11 @@ LOGIN_REDIRECT_URL = reverse_lazy('home')
 
 LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = os.getenv('EMAIL_HOST', config('EMAIL_HOST'))
+# EMAIL_PORT = os.getenv('EMAIL_PORT', config('EMAIL_PORT'))
+# EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', config('EMAIL_USE_TLS')) == "True"
+# EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', config('EMAIL_HOST_USER'))
+# EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', config('EMAIL_HOST_PASSWORD'))
+# COMPANY_EMAIL = os.getenv('COMPANY_EMAIL', config('COMPANY_EMAIL'))
 

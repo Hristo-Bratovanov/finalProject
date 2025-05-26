@@ -1,4 +1,3 @@
-from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 
 from finalProject.accounts import views
@@ -10,6 +9,6 @@ urlpatterns = [
     path('profile/<int:pk>/', include([
         path('', views.ProfileDetailsView.as_view(), name='profile-details'),
         path('edit/', views.ProfileEditView.as_view(), name='profile-edit'),
-        path('delete/', views.AppUserDeleteView.as_view(), name='profile-delete'),
+        path('delete/', views.ProfileDeleteView.as_view(), name='user-delete'),
     ]))
 ]

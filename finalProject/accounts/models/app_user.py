@@ -9,7 +9,7 @@ class AppUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
-    USERNAME_FIELD = 'email' # first credentials for the identification
-    REQUIRED_FIELDS = [] # not really needed
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
     objects = AppUserManager()

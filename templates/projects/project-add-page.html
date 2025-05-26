@@ -2,11 +2,11 @@
 
 {% block content %}
     <div class="form-container">
-        <h2>Add a New Project</h2>
-        <form method="post" enctype="multipart/form-data">
+        <h2>Add Your Project</h2>
+        <form action="{% url 'add-project' %}" enctype="multipart/form-data" method="post">
             {% csrf_token %}
-            {{ form }}
-            <button type="submit">Create Project</button>
+            {{ form.as_p }}
+            <button type="submit">Add</button>
         </form>
     </div>
 {% endblock %}

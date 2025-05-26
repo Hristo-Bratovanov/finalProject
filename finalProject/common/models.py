@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
-from finalProject.projects.models import Project
+from finalProject.photos.models import Photo
 
 UserModel = get_user_model()
 
@@ -21,22 +21,22 @@ class Comment(models.Model):
     )
 
     to_project = models.ForeignKey(
-        to=Project,
+        Photo,
         on_delete=models.CASCADE,
     )
 
     user = models.ForeignKey(
-        to=UserModel,
+        UserModel,
         on_delete=models.CASCADE,
     )
 
 class Like(models.Model):
-    to_project = models.ForeignKey(
-        to=Project,
+    to_photo = models.ForeignKey(
+        Photo,
         on_delete=models.CASCADE,
     )
 
     user = models.ForeignKey(
-        to=UserModel,
+        UserModel,
         on_delete=models.CASCADE,
     )

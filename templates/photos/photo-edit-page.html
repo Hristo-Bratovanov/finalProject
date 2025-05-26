@@ -2,11 +2,11 @@
 
 {% block content %}
     <div class="form-container">
-        <h2>Edit Your Professional Data</h2>
-        <form method="post">
+        <h2>Edit Project</h2>
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}
-            <button type="submit">Edit</button>
+            <button type="submit">Update Project</button>
         </form>
     </div>
 {% endblock %}
