@@ -1,16 +1,16 @@
-from django.forms import ModelForm, TextInput
+from django import forms
 
 from finalProject.projects.models import Project
 
 
-class ProjectBaseForm(ModelForm):
+class ProjectBaseForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ['name', 'location', 'project_photo']
 
         widgets = {
-            'name': TextInput(attrs={'placeholder': 'Name'}),
-            'location': TextInput(attrs={'placeholder': 'Location'}),
+            'name': forms.TextInput(attrs={'placeholder': 'Name'}),
+            'location': forms.TextInput(attrs={'placeholder': 'Location'}),
         }
 
         labels = {
@@ -21,8 +21,25 @@ class ProjectBaseForm(ModelForm):
 class ProjectAddForm(ProjectBaseForm):
     pass
 
-class ProjectEditForm(ProjectBaseForm):
-    pass
+class ProjectEditForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['name', 'location', 'project_photo', 'description', 'expenses']
+
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Name'}),
+            'location': forms.TextInput(attrs={'placeholder': 'Location'}),
+            'description': forms.Textarea(attrs={'placeholder': 'Description'}),
+            'expenses': forms.NumberInput(attrs={'placeholder': 'Expenses'}),
+        }
+
+        labels = {
+            'name': "Project Name",
+            'location': 'Project Location',
+            'description': 'Description',
+            'expenses': 'Expenses',
+        }
+
 
 class ProjectDeleteForm(ProjectBaseForm):
     def __init__(self, *args, **kwargs):

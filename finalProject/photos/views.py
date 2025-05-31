@@ -13,7 +13,14 @@ class PhotoAddView(LoginRequiredMixin, CreateView):
     model = Photo
     form_class = PhotoAddForm
     template_name = 'photos/photo-add-page.html'
-    success_url = reverse_lazy('home')
+
+    def get_success_url(self):
+        return reverse_lazy(
+            'profile-details',
+            kwargs={
+                'pk': self.request.user.pk
+            }
+        )
 
     def form_valid(self, form):
         photo = form.save(commit=False)
@@ -43,11 +50,11 @@ class PhotoEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'photos/photo-edit-page.html'
 
     def test_func(self):
-        photo = get_object_or_404(Photo, slug=self.kwargs['pk'])
+        photo = get_object_or_404(Photo, pk=self.kwargs['pk'])
         return self.request.user == photo.user
 
     def get_success_url(self):
-        return reverse_lazy('photo-details', kwargs={'pk': self.object.pk})
+        return reverse_lazy('photo-details', kwargs={'pk': self.object.id})
 
 
 @login_required

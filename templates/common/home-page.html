@@ -1,9 +1,58 @@
 {% extends 'common/base.html' %}
+{% load url_query_append %}
 {% load static %}
 
 {% block content %}
     <div class="container">
-        <h1>Home Page</h1>
-        <p>This is a simple homepage layout. Feel free to customize it!</p>
+        <div class="col-9">
+
+            <!-- Start Searchbar Form -->
+            <form class="searchbar">
+                {{ search_form }}
+                <button type="submit">
+                    <img src="{% static 'images/search.jpg' %}" alt="Search">
+                </button>
+            </form>
+            <!-- End Searchbar Form -->
+
+            {% for photo in page_obj %}
+                {% include 'photos/photo-details-page.html' %}
+            {% endfor %}
+
+            <!-- Start Pagination -->
+            <div class="pagination">
+                <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </span>
+
+                <span class="step-links-buttons">
+
+                    <!-- If there are previous and next photos -->
+                    {% if page_obj.has_previous and page_obj.has_next %}
+                        <a href="?{% url_query_append_tag request 'page' page_obj.previous_page_number %}">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                        <a href="?{% url_query_append_tag request 'page' page_obj.next_page_number %}">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <!-- If there are only previous photos -->
+                    {% elif page_obj.has_previous %}
+                        <a href="?{% url_query_append_tag request 'page' page_obj.previous_page_number %}">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+
+                        <!-- If there are only next photos -->
+                    {% elif page_obj.has_next %}
+                        <a href="?{% url_query_append_tag request 'page' page_obj.next_page_number %}">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    {% endif %}
+
+                </span>
+            </div>
+            <!-- End Pagination -->
+
+        </div>
     </div>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block content %}
     <div class="form-container">
         <h2>Add Your Project</h2>
-        <form action="{% url 'add-project' %}" enctype="multipart/form-data" method="post">
+        <form enctype="multipart/form-data" method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Add</button>

@@ -39,7 +39,6 @@ class ProfileEditForm(forms.ModelForm):
             'phone_number': forms.TextInput(attrs={'class': 'value'}),
             'occupation': forms.Select(attrs={'class': 'value'}),
             'age': forms.NumberInput(attrs={'class': 'value'}),
-            'number_of_projects': forms.NumberInput(attrs={'class': 'value'}),
             'about_me': forms.Textarea(attrs={'class': 'value'}),
         }
 

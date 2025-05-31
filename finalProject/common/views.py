@@ -33,7 +33,7 @@ class HomePage(ListView):
 
         if project_name:
             queryset = queryset.filter(
-                tagged_professionals__name__icontains=project_name
+                tagged_projects__name__icontains=project_name
             )
 
         return queryset

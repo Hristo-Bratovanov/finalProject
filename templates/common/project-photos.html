@@ -1,113 +1,78 @@
 {% load static %}
 
-<div class="container">
-    <a href="{% url 'profile-details' project.user.pk %}">
-        {% if project.user.profile.profile_picture %}
-            <div class="image">
-                <img src="{{ project.user.profile.profile_picture }}" alt="img8">
-            </div>
-        {% else %}
-            <div class="image">
-                <img src="{% static 'images/person.png' %}" alt="img8">
-            </div>
-        {% endif %}
-    </a>
-
-    <h3>
-        <a href="{% url 'profile-details' project.user.pk %}">
-            {{ project.user.profile.get_full_name }}
-        </a>
-        <br>
-        <!-- if the photo has location -->
-        {% if project.location %}
-            <span>{{ project.location }}</span>
-        {% endif %}
-
-        {% if project_page and request.user.pk == project.user.pk %}
-            <div class="edit-delete-buttons">
-                <a href="{% url 'project-edit' project.pk %}">
-                    <img class="edit-img" src="{% static '/images/edit-pen.jpg' %}" alt="edit button">
-                </a>
-                <a href="{% url 'project-delete' project.pk %}">
-                    <img class="bin-img" src="{% static '/images/delete-icon.jpg' %}"
-                         alt="bin button">
-                </a>
-            </div>
-        {% endif %}
-    </h3>
-
-    <div class="imgBx" id="{{ photo.pk }}">
-        <img src="{{ project.picture.url }}" alt="post" class="cover">
-    </div>
-
-    <span>
-        <a href="{% url 'like' project.pk %}">
-          {% if project.has_liked %}
-              <i class="fa-solid fa-heart" style="color: #ed4040;"></i>
-          {% else %}
-              <i class="fa-regular fa-heart"></i>
-          {% endif %}
-        </a>
-    </span>
-
-    <a href="{% url 'share' project.id %}">
-        <i class="fa-solid fa-share"></i>
-    </a>
-
-    <a href="#">
-        <p class="likes">{{ project.like_set.count }} likes</p>
-    </a>
-
-    {% if project.professional.all %}
-        <div class="detail-item">
-            <span class="label">Professionals Involved:</span>
-            <ul class="professionals">
-                {% for prof in project.professional.all %}
-                    <li>{{ prof.name }} ({{ prof.occupation }})</li>
-                {% endfor %}
-            </ul>
+<h2>
+    {% if photo_page and request.user.pk == photo.user.pk %}
+        <div class="button-wrapper">
+            <a href="{% url 'photo-edit' photo.id %}">
+                <img class="img-button" src="{% static '/images/edit-pen.jpg' %}" alt="edit button">
+            </a>
+            <a href="{% url 'photo-delete' photo.id %}">
+                <img class="img-button" src="{% static '/images/delete-icon.jpg' %}" alt="bin button">
+            </a>
         </div>
     {% endif %}
+</h2>
 
-    {% for professional in project.tagged_professionals.all %}
-        <!-- Link to First Tagged Pet Details Page-->
-        <a href="{% url 'professional-details' project.user.profile.get_full_name professional.slug %}">
-            <p>
-                <b>{{ professional.name }}</b>
-            </p>
+<div class="projects-container">
+    <div class="project-card" id="{{ photo.id }}">
+        <img src="{{ photo.photo.url }}" alt="post" class="project-image">
+    </div>
+</div>
+
+<div class="actionBtns">
+    <div class="left">
+        <a href="{% url 'like' photo.id %}">
+            {% if photo.has_liked %}
+                <i class="fa-solid fa-heart" style="color: #ed4040;"></i>
+            {% else %}
+                <i class="fa-regular fa-heart"></i>
+            {% endif %}
         </a>
-    {% endfor %}
-
-    {% if project_page %}
-        <p class="pet-details">{{ project.description }}</p>
-    {% else %}
-        <a href="{% url 'project-details' project.pk %}">
-            <h4 class="details">Project details</h4>
+        <a href="{% url 'share' photo.id %}">
+            <i class="fa-solid fa-share"></i>
         </a>
-    {% endif %}
+    </div>
+</div>
 
-    {% if photo_page %}
-        {% for comment in comments %}
-            <div class="image">
-                {% if comment.user.profile.profile_picture %}
-                    <img src="{{ comment.user.profile.profile_picture }}" alt="img8">
-                {% else %}
-                    <img src="{% static 'images/person.png' %}" alt="img8">
-                {% endif %}
-            </div>
+<a href="#">
+    <p class="likes">{{ photo.like_set.count }} likes</p>
+</a>
+
+{% if photo_page %}
+    <div class="description-box">
+        <p>Description: {{ photo.description }}</p>
+    </div>
+{% else %}
+    <a href="{% url 'photo-edit' photo.id %}">
+        <h4>See details</h4>
+    </a>
+{% endif %}
+<br>
+{% if photo_page %}
+    <p>Comments section:</p>
+    {% for comment in comments %}
+        <div class="comment-text">
             <p>
-                <a href="{% url 'profile-details' comment.user.pk %}">{{ comment.user.profile.get_full_name }}</a>
+                <a href="{% url 'profile-details' comment.user.pk %}">{{ comment.user.profile.get_full_name }}:</a>
                 {{ comment.text }}
             </p>
-            <span>{{ comment.date_time_of_publication }}</span>
-        {% endfor %}
-    {% endif %}
+            <span class="date">{{ comment.date_time_of_publication }}</span>
+        </div>
+    {% endfor %}
+{% endif %}
 
-    <div>
-        <form method="post" action="{% url 'comment' project.pk %}">
-            {% csrf_token %}
-            {{ comment_form.as_p }}
-            <button type="submit">Post</button>
-        </form>
-    </div>
+<div class="data-wrapper">
+    <form method="post" action="{% url 'comment' photo.id %}" class="data">
+        {% csrf_token %}
+        {% for field in comment_form %}
+            <div class="data-item">
+                <span class="label">{{ field.label_tag }}</span>
+                <span class="value">{{ field }}</span>
+            </div>
+            {% if field.errors %}
+                <p style="color: red;">{{ field.errors }}</p>
+            {% endif %}
+        {% endfor %}
+        <button type="submit">Post comment</button>
+    </form>
 </div>

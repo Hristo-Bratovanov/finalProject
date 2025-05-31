@@ -50,7 +50,7 @@
                 <a href="{% url 'project-details' object.profile.get_full_name project.slug %}">
                     <img src="{{ project.project_photo.url }}" alt="Project image" class="project-image"/>
                 </a>
-                <p>{{ project.name }}</p>
+            <p class="project-name">{{ project.name }}</p>
             </div>
         {% empty %}
             <img class="no-projects" src="{% static 'images/no_projects.png' %}" alt="no projects image">

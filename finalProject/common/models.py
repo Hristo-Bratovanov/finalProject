@@ -20,7 +20,7 @@ class Comment(models.Model):
         auto_now_add=True,
     )
 
-    to_project = models.ForeignKey(
+    to_photo = models.ForeignKey(
         Photo,
         on_delete=models.CASCADE,
     )

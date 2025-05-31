@@ -5,54 +5,51 @@
     <div class="card">
         <h2>{{ project.name }}</h2>
 
-        <div>
-            <img src="{{ project.personal_photo.url }}" alt="img8">
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="{{ project.project_photo.url }}" alt="Project image" class="project-image">
+            </div>
         </div>
-
+        <br>
         <div class="detail-item">
-            <span class="label">Email:</span>
-            <span class="value">{{ project.email }}</span>
+            <span class="label">Location:</span>
+            <span class="value">{{ project.location }}</span>
         </div>
-
+        <br>
         <div class="detail-item">
-            <span class="label">Phone Number:</span>
-            <span class="value">{{ project.phone_number }}</span>
+            <span class="label">Project expenses:</span>
+            <span class="value">{{ project.expenses }}</span>
         </div>
-
-        <div class="detail-item">
-            <span class="label">Occupation:</span>
-            <span class="value">{{ project.occupation }}</span>
-        </div>
-
-        <div class="detail-item">
-            <span class="label">Age:</span>
-            <span class="value">{{ project.age }}</span>
-        </div>
-
-        <div class="detail-item">
-            <span class="label">Projects Completed:</span>
-            <span class="value">{{ project.project_set.count }}</span>
-        </div>
-
-        {% if professional.about_me %}
+        <br>
+        {% if project.description %}
             <div class="detail-item">
-                <span class="label">About Me:</span>
-                <div class="value">{{ project.about_me }}</div>
+                <span class="label">Project description:</span>
+                <div class="value">{{ project.description }}</div>
             </div>
         {% endif %}
-
+        <br>
         {% if request.user == project.user %}
             <div class="actions">
-                <a href="{% url 'professional-edit' "username" project.slug %}">Edit</a>
-                <a href="{% url 'professional-delete' "username" project.slug %}">Delete</a>
+                <a href="{% url 'project-edit' object.user.profile.get_full_name project.slug %}" class="btn">Edit
+                    Project</a>
+                <a href="{% url 'project-delete' object.user.profile.get_full_name project.slug %}" class="btn">Delete
+                    Project</a>
             </div>
         {% endif %}
     </div>
-    <div class="professional-projects">
-        {% for photo in all_photos %}
-            {% include 'common/project-photos.html' %}
-        {% empty %}
-            <img class="no-photos" src="{% static '/images/no_photos.png' %}" alt="no projects image">
-        {% endfor %}
-    </div>
+    <br>
+    {% if object.photo_set.all %}
+        <div class="projects-container">
+            {% for photo in object.photo_set.all %}
+                <div class="project-card">
+                    <a href="{% url 'photo-details' photo.id %}">
+                        <img src="{{ photo.photo.url }}" alt="pet img" class="project-image"/>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <img src="{% static 'images/no_photos.png' %}" alt="no posts"/>
+    {% endif %}
+
 {% endblock %}
