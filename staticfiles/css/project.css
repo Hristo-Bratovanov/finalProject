@@ -1,0 +1,36 @@
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  width: 200px;
+  height: auto; /* Let it grow */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Optional: center the text */
+}
+
+.project-image {
+  width: 100%;
+  height: 200px; /* Fixed height for image */
+  object-fit: cover;
+  display: block;
+}
+
+.project-name {
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+.no-photos {
+  width: 600px;              /* or any size you prefer */
+  height: 500px;
+  object-fit: cover;         /* ensures the image fills the box without distortion */
+  border: 2px solid #ccc;    /* optional border */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* optional subtle shadow */
+}

@@ -1,0 +1,75 @@
+.actionBtns {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-top: 20px;         /* Optional spacing */
+}
+
+.actionBtns .left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.actionBtns a {
+  text-decoration: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.actionBtns i {
+  margin: 0;
+  padding: 0;
+  font-size: 24px; /* Optional: make icons bigger */
+}
+
+.button-wrapper {
+  display: flex;
+  gap: 12px; /* space between buttons */
+  align-items: center;
+  justify-content: center; /* center if you want */
+}
+
+.img-button {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  object-fit: cover;
+  display: block; /* fixes small spacing issues */
+}
+
+.img-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.comment-text {
+  margin-left: 8px; /* Adjust this for desired spacing */
+  background-color: #f5f5f5;
+  padding: 10px 14px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.description-box {
+  background-color: rgb(150, 175, 97);
+  border-left: 4px solid #007BFF;
+  padding: 12px 16px;
+  margin: 20px auto;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  max-width: 500px; /* Limit width */
+  width: 100%;      /* Let it shrink on small screens */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+
+
+
+
+
