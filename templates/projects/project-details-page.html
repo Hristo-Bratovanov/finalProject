@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="card">
-        <h2>{{ project.name }}</h2>
+        <h2>Project: {{ project.name }}</h2>
 
         <div class="projects-container">
             <div class="project-card">
@@ -39,6 +39,7 @@
     </div>
     <br>
     {% if object.photo_set.all %}
+        <h2>Project photos:</h2>
         <div class="projects-container">
             {% for photo in object.photo_set.all %}
                 <div class="project-card">
@@ -48,8 +49,6 @@
                 </div>
             {% endfor %}
         </div>
-    {% else %}
-        <img src="{% static 'images/no_photos.png' %}" alt="no posts"/>
     {% endif %}
 
 {% endblock %}

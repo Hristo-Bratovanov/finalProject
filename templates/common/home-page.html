@@ -3,56 +3,66 @@
 {% load static %}
 
 {% block content %}
-    <div class="container">
-        <div class="col-9">
-            <br>
-            <!-- Start Searchbar Form -->
-            <form class="searchbar">
-                {{ search_form }}
-                <button type="submit">
-                    <img src="{% static 'images/search.jpg' %}" alt="Search">
-                </button>
-            </form>
-            <!-- End Searchbar Form -->
-
-            {% for photo in page_obj %}
-                {% include 'photos/photo-details-page.html' %}
-            {% endfor %}
-
-            <!-- Start Pagination -->
-            <div class="pagination">
+    {% if request.user.is_authenticated and page_obj %}
+        <br>
+        <!-- Start Searchbar Form -->
+        <form class="searchbar">
+            {{ search_form }}
+            <button type="submit">
+                <img src="{% static 'images/search.jpg' %}" alt="Search">
+            </button>
+        </form>
+        <!-- End Searchbar Form -->
+        <br>
+        {% for photo in page_obj %}
+            {% include 'common/project-photos.html' %}
+        {% endfor %}
+        <br>
+        <!-- Start Pagination -->
+        <div class="pagination">
                 <span class="current">
                         Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
                 </span>
-
-                <span class="step-links-buttons">
-
+            <span class="step-links-buttons">
                     <!-- If there are previous and next photos -->
-                    {% if page_obj.has_previous and page_obj.has_next %}
-                        <a href="?{% url_query_append_tag request 'page' page_obj.previous_page_number %}">
+                {% if page_obj.has_previous and page_obj.has_next %}
+                    <a href="?{% url_query_append_tag request 'page' page_obj.previous_page_number %}">
                             <i class="fa-solid fa-arrow-left"></i>
                         </a>
-                        <a href="?{% url_query_append_tag request 'page' page_obj.next_page_number %}">
+                    <a href="?{% url_query_append_tag request 'page' page_obj.next_page_number %}">
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
-
-                        <!-- If there are only previous photos -->
-                    {% elif page_obj.has_previous %}
-                        <a href="?{% url_query_append_tag request 'page' page_obj.previous_page_number %}">
+                    <!-- If there are only previous photos -->
+                {% elif page_obj.has_previous %}
+                    <a href="?{% url_query_append_tag request 'page' page_obj.previous_page_number %}">
                             <i class="fa-solid fa-arrow-left"></i>
                         </a>
-
-                        <!-- If there are only next photos -->
-                    {% elif page_obj.has_next %}
-                        <a href="?{% url_query_append_tag request 'page' page_obj.next_page_number %}">
+                    <!-- If there are only next photos -->
+                {% elif page_obj.has_next %}
+                    <a href="?{% url_query_append_tag request 'page' page_obj.next_page_number %}">
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                    {% endif %}
-
+                {% endif %}
                 </span>
-            </div>
-            <!-- End Pagination -->
-
         </div>
-    </div>
+        <!-- End Pagination -->
+    {% elif request.user.is_authenticated %}
+        <div class="home-container">
+            <h1>
+                Here you will see photos of the projects, but you first need to add them
+            </h1>
+            <div class="image-container">
+                <img src="{% static 'images/no_photos.png' %}" alt="Civil Engineering or Architectural Design">
+            </div>
+        </div>
+    {% else %}
+        <div class="home-container">
+            <h1>
+                SRUCDESIGN is the place to share your best civil engineering and architectural projects
+            </h1>
+            <div class="image-container">
+                <img src="{% static 'images/home-page-pic.jpg' %}" alt="Civil Engineering or Architectural Design">
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

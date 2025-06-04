@@ -16,7 +16,7 @@ class SearchForm(forms.Form):
         required=False,
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Search by project name...',
+                'placeholder': 'Filter by project name...',
             }
         )
     )

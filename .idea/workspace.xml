@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="search bar moved downward">
+      <change beforePath="$PROJECT_DIR$/finalProject/common/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/common/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/home-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/photo.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/photo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/login-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/login-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/register-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/register-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/project-photos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/project-photos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/photos/photo-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/photos/photo-details-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/photos/photo-edit-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/photos/photo-edit-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/projects/project-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-details-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/projects/project-edit-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-edit-page.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Hristo-Bratovanov&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Hristo-Bratovanov/finalProject.git&quot;,
+    &quot;accountId&quot;: &quot;5fdb55c1-15f0-417c-8a17-1cdaaf51349e&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2sUQk1KMt667Qv55mRa2NMotKJQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.finalProject.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Computer_Science/selflearning/finalProject&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Computer_Science\selflearning\finalProject\mediafiles" />
+      <recent name="C:\Computer_Science\selflearning\finalProject\finalProject\accounts" />
+      <recent name="C:\Computer_Science\selflearning\finalProject\finalProject" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="finalProject" type="Python.DjangoServer" factoryName="Django server">
+      <module name="finalProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="finalProject.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.180" />
+        <option value="bundled-python-sdk-85c76a3b01b3-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.180" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="" />
+      <created>1738507812704</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738507812704</updated>
+      <workItem from="1738507813828" duration="198000" />
+      <workItem from="1738508029258" duration="1377000" />
+      <workItem from="1738511213594" duration="6283000" />
+      <workItem from="1739032610775" duration="4173000" />
+      <workItem from="1739041796390" duration="2094000" />
+      <workItem from="1739043918909" duration="7169000" />
+      <workItem from="1739139531669" duration="1249000" />
+      <workItem from="1739701866178" duration="13045000" />
+      <workItem from="1739744541129" duration="30000" />
+      <workItem from="1741035742998" duration="1102000" />
+      <workItem from="1741037876728" duration="2144000" />
+      <workItem from="1745223013024" duration="8683000" />
+      <workItem from="1745620325542" duration="98000" />
+      <workItem from="1745784836665" duration="2598000" />
+      <workItem from="1746376321674" duration="2716000" />
+      <workItem from="1746379782122" duration="94000" />
+      <workItem from="1746380029413" duration="156000" />
+      <workItem from="1746388248188" duration="329000" />
+      <workItem from="1746389017701" duration="811000" />
+      <workItem from="1746389951495" duration="77000" />
+      <workItem from="1746390082346" duration="151000" />
+      <workItem from="1746390382079" duration="1911000" />
+      <workItem from="1746392773686" duration="553000" />
+      <workItem from="1746799061915" duration="2712000" />
+      <workItem from="1746885395229" duration="4428000" />
+      <workItem from="1746958233757" duration="5928000" />
+      <workItem from="1747083168597" duration="961000" />
+      <workItem from="1747084153298" duration="5000" />
+      <workItem from="1747485317920" duration="16815000" />
+      <workItem from="1747563972198" duration="13132000" />
+      <workItem from="1747773079141" duration="8007000" />
+      <workItem from="1747944238319" duration="3318000" />
+      <workItem from="1748090384836" duration="7949000" />
+      <workItem from="1748159994987" duration="6476000" />
+      <workItem from="1748205924854" duration="1248000" />
+      <workItem from="1748284304183" duration="6426000" />
+      <workItem from="1748370676630" duration="5548000" />
+      <workItem from="1748510716766" duration="1289000" />
+      <workItem from="1748512515317" duration="8056000" />
+      <workItem from="1748549895235" duration="2057000" />
+      <workItem from="1748631768408" duration="271000" />
+      <workItem from="1748632463237" duration="5965000" />
+      <workItem from="1748681297279" duration="15317000" />
+      <workItem from="1748704329434" duration="72000" />
+      <workItem from="1748704441147" duration="1604000" />
+      <workItem from="1748710822495" duration="2431000" />
+      <workItem from="1748771699617" duration="6592000" />
+      <workItem from="1748804044630" duration="7816000" />
+    </task>
+    <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
+      <option name="closed" value="true" />
+      <created>1739041367310</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739041367310</updated>
+    </task>
+    <task id="LOCAL-00002" summary="UserModel, ProfileModel, Forms and Registration">
+      <option name="closed" value="true" />
+      <created>1739043644453</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739043644453</updated>
+    </task>
+    <task id="LOCAL-00003" summary="repairing the admin functionality">
+      <option name="closed" value="true" />
+      <created>1739044316975</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739044316975</updated>
+    </task>
+    <task id="LOCAL-00004" summary="creating register, login and logout views">
+      <option name="closed" value="true" />
+      <created>1739709546801</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739709546801</updated>
+    </task>
+    <task id="LOCAL-00005" summary="creating register, login and logout views">
+      <option name="closed" value="true" />
+      <created>1745223490731</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745223490731</updated>
+    </task>
+    <task id="LOCAL-00006" summary="AppUser forms, Logout view and nav.html">
+      <option name="closed" value="true" />
+      <created>1745271332363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745271332363</updated>
+    </task>
+    <task id="LOCAL-00007" summary="AppUser forms, Logout view and nav.html">
+      <option name="closed" value="true" />
+      <created>1745787434053</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745787434053</updated>
+    </task>
+    <task id="LOCAL-00008" summary="first and second name to only name">
+      <option name="closed" value="true" />
+      <created>1746799555989</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746799555989</updated>
+    </task>
+    <task id="LOCAL-00009" summary="all templates are rewritten without the posts template">
+      <option name="closed" value="true" />
+      <created>1747599622107</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747599622107</updated>
+    </task>
+    <task id="LOCAL-00010" summary="user functionality is ready, add project is ready">
+      <option name="closed" value="true" />
+      <created>1748291396512</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1748291396512</updated>
+    </task>
+    <task id="LOCAL-00011" summary="user functionality is ready, add project is ready">
+      <option name="closed" value="true" />
+      <created>1748701688081</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748701688081</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added whitenoise">
+      <option name="closed" value="true" />
+      <created>1748704167406</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748704167406</updated>
+    </task>
+    <task id="LOCAL-00013" summary="search bar moved downward">
+      <option name="closed" value="true" />
+      <created>1748711294012</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1748711294012</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="PermissionsMixin, Forms and Registration" />
+    <MESSAGE value="UserModel, ProfileModel, Forms and Registration" />
+    <MESSAGE value="repairing the admin functionality" />
+    <MESSAGE value="creating register, login and logout views" />
+    <MESSAGE value="AppUser forms, Logout view and nav.html" />
+    <MESSAGE value="first and second name to only name" />
+    <MESSAGE value="all templates are rewritten without the posts template" />
+    <MESSAGE value="user functionality is ready, add project is ready" />
+    <MESSAGE value="added whitenoise" />
+    <MESSAGE value="search bar moved downward" />
+    <option name="LAST_COMMIT_MESSAGE" value="search bar moved downward" />
+  </component>
+</project>

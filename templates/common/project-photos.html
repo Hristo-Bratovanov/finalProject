@@ -1,78 +1,81 @@
 {% load static %}
 
-<h2>
+<div class="photo-card">
+
     {% if photo_page and request.user.pk == photo.user.pk %}
         <div class="button-wrapper">
             <a href="{% url 'photo-edit' photo.id %}">
-                <img class="img-button" src="{% static '/images/edit-pen.jpg' %}" alt="edit button">
+                <img class="photo-edit-button" src="{% static '/images/edit-pen.jpg' %}" alt="edit button" title="Edit">
             </a>
             <a href="{% url 'photo-delete' photo.id %}">
-                <img class="img-button" src="{% static '/images/delete-icon.jpg' %}" alt="bin button">
+                <img class="photo-delete-button" src="{% static '/images/delete-icon.jpg' %}" alt="bin button"
+                     title="Delete">
             </a>
         </div>
     {% endif %}
-</h2>
 
-<div class="projects-container">
-    <div class="project-card" id="{{ photo.id }}">
-        <img src="{{ photo.photo.url }}" alt="post" class="project-image">
-    </div>
-</div>
-
-<div class="actionBtns">
-    <div class="left">
-        <a href="{% url 'like' photo.id %}">
-            {% if photo.has_liked %}
-                <i class="fa-solid fa-heart" style="color: #ed4040;"></i>
-            {% else %}
-                <i class="fa-regular fa-heart"></i>
-            {% endif %}
-        </a>
-        <a href="{% url 'share' photo.id %}">
-            <i class="fa-solid fa-share"></i>
-        </a>
-    </div>
-</div>
-
-<a href="#">
-    <p class="likes">{{ photo.like_set.count }} likes</p>
-</a>
-
-{% if photo_page %}
-    <div class="description-box">
-        <p>Description: {{ photo.description }}</p>
-    </div>
-{% else %}
-    <a href="{% url 'photo-edit' photo.id %}">
-        <h4>See details</h4>
-    </a>
-{% endif %}
-<br>
-{% if photo_page %}
-    <p>Comments section:</p>
-    {% for comment in comments %}
-        <div class="comment-text">
-            <p>
-                <a href="{% url 'profile-details' comment.user.pk %}">{{ comment.user.profile.get_full_name }}:</a>
-                {{ comment.text }}
-            </p>
-            <span class="date">{{ comment.date_time_of_publication }}</span>
+    <div class="photo-details-container">
+        <div class="photo-card" id="{{ photo.id }}">
+            <img src="{{ photo.photo.url }}" alt="post" class="large-image">
         </div>
-    {% endfor %}
-{% endif %}
+    </div>
 
-<div class="data-wrapper">
-    <form method="post" action="{% url 'comment' photo.id %}" class="data">
-        {% csrf_token %}
-        {% for field in comment_form %}
-            <div class="data-item">
-                <span class="label">{{ field.label_tag }}</span>
-                <span class="value">{{ field }}</span>
-            </div>
-            {% if field.errors %}
-                <p style="color: red;">{{ field.errors }}</p>
-            {% endif %}
-        {% endfor %}
-        <button type="submit">Post comment</button>
-    </form>
+    <div class="actionBtns">
+        <div class="left">
+            <a href="{% url 'like' photo.id %}">
+                {% if photo.has_liked %}
+                    <i class="fa-solid fa-heart" style="color: #ed4040;"></i>
+                {% else %}
+                    <i class="fa-regular fa-heart"></i>
+                {% endif %}
+            </a>
+            <a href="{% url 'share' photo.id %}">
+                <i class="fa-solid fa-share"></i>
+            </a>
+        </div>
+    </div>
+
+    <p class="likes">{{ photo.like_set.count }} likes</p>
+
+    {% if photo_page %}
+        <div class="description-box">
+            <p><strong>Description:</strong> {{ photo.description }}</p>
+        </div>
+    {% else %}
+        <a href="{% url 'photo-details' photo.id %}">
+            <h4>See details</h4>
+        </a>
+    {% endif %}
+
+    {% if photo_page %}
+        <div class="comments-section">
+            <p><strong>Comments section:</strong></p>
+            {% for comment in comments %}
+                <div class="comment-text">
+                    <p>
+                        <a href="{% url 'profile-details' comment.user.pk %}">{{ comment.user.profile.get_full_name }}:</a>
+                        {{ comment.text }}
+                    </p>
+                    <span class="date">{{ comment.date_time_of_publication }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="comment-wrapper">
+        <form method="post" action="{% url 'comment' photo.id %}" class="comment-form">
+            {% csrf_token %}
+            {% for field in comment_form %}
+                <div class="data-item">
+                    <span>{{ field.label_tag }}</span>
+                    <span>{{ field }}</span>
+                </div>
+                {% if field.errors %}
+                    <p class="error">{{ field.errors }}</p>
+                {% endif %}
+            {% endfor %}
+            <button type="submit">Post comment</button>
+        </form>
+    </div>
+
 </div>

@@ -1,72 +1,167 @@
 .actionBtns {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  margin-top: 20px;         /* Optional spacing */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    margin-top: 20px; /* Optional spacing */
 }
 
 .actionBtns .left {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
 .actionBtns a {
-  text-decoration: none;
-  border: none;
-  display: inline-flex;
-  align-items: center;
+    text-decoration: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
 }
 
 .actionBtns i {
-  margin: 0;
-  padding: 0;
-  font-size: 24px; /* Optional: make icons bigger */
+    margin: 0;
+    padding: 0;
+    font-size: 24px; /* Optional: make icons bigger */
 }
 
 .button-wrapper {
-  display: flex;
-  gap: 12px; /* space between buttons */
-  align-items: center;
-  justify-content: center; /* center if you want */
+    display: flex;
+    gap: 12px; /* space between buttons */
+    align-items: center;
+    justify-content: center; /* center if you want */
+}
+
+/* Photo buttons */
+
+.photo-edit-button,
+.photo-delete-button {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    object-fit: cover;
+    display: block; /* fixes small spacing issues */
+}
+
+.photo-edit-button:hover,
+.photo-delete-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Description */
+
+.description-box {
+    background-color: rgb(150, 175, 97);
+    border-left: 4px solid #007BFF;
+    padding: 12px 16px;
+    margin: 20px auto;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    max-width: 500px; /* Limit width */
+    width: 100%; /* Let it shrink on small screens */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.photo-card {
+    max-width: 650px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.photo-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.large-image {
+    width: 100%; /* Expands to the container's width */
+    height: auto; /* Automatically adjusts to preserve aspect ratio */
+    max-width: 800px; /* Optional: limit how wide the image can go */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.button-wrapper {
+    text-align: right;
+    margin-bottom: 1rem;
 }
 
 .img-button {
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  object-fit: cover;
-  display: block; /* fixes small spacing issues */
+    width: 30px;
+    margin-left: 10px;
 }
 
-.img-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.comment-text {
-  margin-left: 8px; /* Adjust this for desired spacing */
-  background-color: #f5f5f5;
-  padding: 10px 14px;
-  border-radius: 8px;
-  flex: 1;
+.likes {
+    font-weight: bold;
+    margin-top: 0.5rem;
 }
 
 .description-box {
-  background-color: rgb(150, 175, 97);
-  border-left: 4px solid #007BFF;
-  padding: 12px 16px;
-  margin: 20px auto;
-  border-radius: 6px;
-  font-size: 15px;
-  color: #333;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  max-width: 500px; /* Limit width */
-  width: 100%;      /* Let it shrink on small screens */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+    margin: 1rem auto; /* Centers horizontally */
+    font-size: 1rem;
+    text-align: center; /* Centers text inside the box */
+    max-width: 460px; /* Optional: limits the width */
+    padding: 1rem;
+    background-color: #f9f9f9; /* Optional: visual styling */
 }
+
+/* Comment form */
+
+.comment-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.comment-form {
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.comment-form .data-item {
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form input,
+.comment-form textarea {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+    height: 1.8rem; /* Shrinks height */
+    resize: vertical;
+}
+
+.comment-form textarea {
+    min-height: 60px;
+    max-height: 120px;
+}
+
+.comment-form button {
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+}
+
 
 
 

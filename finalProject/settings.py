@@ -97,7 +97,7 @@ DATABASES = {
         "USER": os.getenv('DB_USER', config('DB_USER')),
         "PASSWORD": os.getenv('DB_PASS', config('DB_PASS')),
         "HOST": os.getenv('DB_HOST', config('DB_HOST')),
-        "PORT": os.getenv('DB_PORT', config('DB_HOST')),
+        "PORT": os.getenv('DB_PORT', config('DB_PORT')),
     }
 }
 
@@ -159,6 +159,7 @@ AUTH_USER_MODEL = 'accounts.AppUser'
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 
 LOGOUT_REDIRECT_URL = reverse_lazy('login')
+
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = os.getenv('EMAIL_HOST', config('EMAIL_HOST'))
