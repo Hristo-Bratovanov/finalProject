@@ -5,7 +5,8 @@ from finalProject.accounts.managers import AppUserManager
 
 
 class AppUser(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(max_length=255, unique=True)
+    email = models.EmailField(unique=True, null=False, blank=False)
+
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 

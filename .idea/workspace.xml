@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="search bar moved downward">
-      <change beforePath="$PROJECT_DIR$/finalProject/common/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/common/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/home-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/photo.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/photo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/login-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/login-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/register-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/register-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/base.html" afterDir="false" />
+    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="photo cards are modified">
+      <change afterPath="$PROJECT_DIR$/finalProject/accounts/migrations/0006_remove_profile_email_alter_appuser_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalProject/accounts/models/app_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/accounts/models/app_profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalProject/accounts/models/app_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/accounts/models/app_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalProject/photos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/photos/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/common/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/project-photos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/project-photos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/photos/photo-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/photos/photo-details-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/photos/photo-edit-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/photos/photo-edit-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/projects/project-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-details-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/projects/project-edit-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-edit-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +176,9 @@
       <workItem from="1748710822495" duration="2431000" />
       <workItem from="1748771699617" duration="6592000" />
       <workItem from="1748804044630" duration="7816000" />
+      <workItem from="1749069354578" duration="1150000" />
+      <workItem from="1749070520212" duration="3000" />
+      <workItem from="1749501936477" duration="1360000" />
     </task>
     <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
       <option name="closed" value="true" />
@@ -290,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748711294012</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="photo cards are modified">
+      <option name="closed" value="true" />
+      <created>1749070458208</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1749070458208</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +323,7 @@
     <MESSAGE value="user functionality is ready, add project is ready" />
     <MESSAGE value="added whitenoise" />
     <MESSAGE value="search bar moved downward" />
-    <option name="LAST_COMMIT_MESSAGE" value="search bar moved downward" />
+    <MESSAGE value="photo cards are modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="photo cards are modified" />
   </component>
 </project>

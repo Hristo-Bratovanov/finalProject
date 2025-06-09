@@ -6,6 +6,12 @@ from finalProject.accounts.validators import validate_phone_number
 UserModel = get_user_model()
 
 class Profile(models.Model):
+    user = models.OneToOneField(
+        UserModel,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
+
     CHOICES_OCCUPATION = [
         ('Engineer', 'Engineer'),
         ('Architect', 'Architect'),
@@ -19,8 +25,6 @@ class Profile(models.Model):
 
     profile_picture = models.ImageField(upload_to='', null=True, blank=True)
 
-    email = models.EmailField(unique=True)
-
     phone_number = models.CharField(max_length=11, validators=[validate_phone_number])
 
     occupation = models.CharField(max_length=100, choices=CHOICES_OCCUPATION)
@@ -32,11 +36,6 @@ class Profile(models.Model):
 
     about_me = models.TextField(null=True, blank=True)
 
-    user = models.OneToOneField(
-        UserModel,
-        on_delete=models.CASCADE,
-        primary_key=True,
-    )
 
     def get_full_name(self):
         if self.first_name and self.last_name:
