@@ -8,7 +8,7 @@
             <form method="POST">
                 {% csrf_token %}
 
-                {{ form.errors }}
+                {{ form.username.errors }}
                 {{ form.username|placeholder:"Email" }}
                 {{ form.password|placeholder:"Password" }}
 

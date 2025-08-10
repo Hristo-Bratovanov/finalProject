@@ -4,136 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="new app structure">
-      <change afterPath="$PROJECT_DIR$/common/mixins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/employees/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/employees/validators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_pictures/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_pictures/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_pictures/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/company.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/accounts/company-details-page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/common/companies-anonymous.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/employees/employee-delete-page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/project_pictures/picture-add-page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/project_pictures/picture-details-page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/project_pictures/picture-edit-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d039a7a9-61b5-470d-ab63-dd627ad83366.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d039a7a9-61b5-470d-ab63-dd627ad83366.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d039a7a9-61b5-470d-ab63-dd627ad83366/storage_v2/_src_/database/finalprojectdb.oXi-ZA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d039a7a9-61b5-470d-ab63-dd627ad83366/storage_v2/_src_/database/finalprojectdb.oXi-ZA/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="changes to forms.py and tests.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.env.template" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/managers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/migrations/0002_alter_profile_age.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/migrations/0003_alter_profile_number_of_projects.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/migrations/0004_remove_profile_number_of_projects.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/migrations/0005_alter_profile_profile_picture.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/migrations/0006_remove_profile_email_alter_appuser_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/models/app_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models/app_profile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/models/app_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models/app_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/validators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/migrations/0002_rename_to_project_comment_to_photo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/templatetags/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/validators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/templatetags/placeholder_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/templatetags/placeholder_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/templatetags/url_query_append.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/templatetags/url_query_append.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/common/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/photos/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/photos/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/photos/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/photos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/photos/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/photos/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/photos/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/photos/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/photos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/photos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/templatetags/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/migrations/0002_alter_project_project_photo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/migrations/0003_alter_project_expenses.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/migrations/0004_alter_project_project_photo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/employees/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/projects/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/brige.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/brige_6LCDo40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/brige_6hyDhZL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/brige_EroObCM.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/brige_Q0qNeu6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/mediafiles/brige.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/mediafiles/cn-tower-7432217_1280.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/mediafiles/golden-gate-bridge-4271364_640.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/mediafiles/london-bridge-2324875_640.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/mediafiles/tower-1207341_640.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/mediafiles/tower-bridge-5727975_640.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/mediafiles/tower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/mediafiles/tower_5mieTVh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/mediafiles/travel-destination-5098259_640.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/pers_photo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/pers_photo_d6I5lUB.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/pers_photo_ov4vaPv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/pers_photo_t3WGcp8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/pers_photo_wVz6jWb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/tower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/tower_71NXvj5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/tower_7SxYP8q.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/tower_WBPVhXe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/tower_ioQTVqs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/tower_oMmagYM.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/tower_vCEDi90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/home-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/home-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/photo.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/picture.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/profile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/project.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/project.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/no_photos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/no_projects.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/css/home-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/css/home-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/css/profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/login-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/login-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/profile-details-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/profile-edit-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/company-edit-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/register-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/register-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/user-delete-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/company-delete-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/project-photos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/project-photos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/photos/photo-add-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/employees/employee-add-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/photos/photo-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/employees/employee-details-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/photos/photo-edit-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/employees/employee-edit-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/projects/project-add-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-add-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/projects/project-delete-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-delete-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/projects/project-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-details-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/projects/project-edit-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-edit-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,6 +210,7 @@
       <workItem from="1754775484879" duration="877000" />
       <workItem from="1754816490401" duration="5520000" />
       <workItem from="1754831826714" duration="5019000" />
+      <workItem from="1754838720664" duration="3608000" />
     </task>
     <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
       <option name="closed" value="true" />
@@ -465,7 +340,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750594012518</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="new app structure">
+      <option name="closed" value="true" />
+      <created>1754838943547</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1754838943547</updated>
+    </task>
+    <task id="LOCAL-00018" summary="changes to forms.py and tests.py">
+      <option name="closed" value="true" />
+      <created>1754839044166</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1754839044166</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,6 +391,8 @@
     <MESSAGE value="photo cards are modified" />
     <MESSAGE value="removed adding photo to user" />
     <MESSAGE value="changed position of footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed position of footer" />
+    <MESSAGE value="new app structure" />
+    <MESSAGE value="changes to forms.py and tests.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes to forms.py and tests.py" />
   </component>
 </project>
