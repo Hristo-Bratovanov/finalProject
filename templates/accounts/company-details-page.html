@@ -1,0 +1,81 @@
+{% extends 'common/base.html' %}}
+{% load static %}
+
+{% block content %}
+    <div>
+        <div>
+            <br>
+            {% if object.company_profile.company_logo %} {#object is the user#}
+                <img src="{{ object.company_profile.company_logo.url }}" alt="img8" class="round-profile"/>
+            {% else %}
+                <img src="{% static 'images/person.png' %}" alt="img8" class="round-profile"/>
+            {% endif %}
+
+            {% if object.company_profile.company_name %}
+                <p class="project-name"><strong>Company Name:</strong> {{ object.company_profile.company_name }}</p>
+            {% else %}
+                <p class="project-name"><strong>Company Name:</strong> not given yet</p>
+            {% endif %}
+
+            {% if request.user.pk == object.pk %}
+                <a href="{% url 'company-edit' request.user.pk %}" class="btn">Edit Details</a>
+                <a href="{% url 'company-delete' request.user.pk %}" class="btn">Delete Company</a>
+            {% endif %}
+        </div>
+        <br>
+        <div class="data-wrapper">
+            <div class="data">
+                <div class="data-item">
+                    <span class="label">Industry:</span>
+                    <span class="value">{{ object.company_profile.industry }}</span>
+                </div>
+
+                <div class="data-item">
+                    <span class="label">Number of Projects:</span>
+                    <span class="value">{{ total_projects_count }}</span>
+                </div>
+
+                <div class="data-item">
+                    <span class="label">Number of employees:</span>
+                    <span class="value">{{ total_employees_count }}</span>
+                </div>
+
+                <div class="data-item">
+                    <span class="label">Email:</span>
+                    <span class="value">{{ object.email }}</span>
+                </div>
+
+                <div class="data-item">
+                    <span class="label">Telephone:</span>
+                    <span class="value">{{ object.company_profile.phone_number }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h1>Company's projects:</h1>
+    <div class="projects-container">
+        {% for project in object.projects.all %}
+            <div class="project-card">
+                <a href="{% url 'project-details' project.slug %}">
+                    <img src="{{ project.project_photo.url }}" alt="Project image" class="project-image"
+                         title="view project details and photos"/>
+                </a>
+                <p class="project-name">Project: {{ project.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% if object.employees.all %}
+        <h2>Company's employees:</h2>
+        <div class="projects-container">
+            {% for employee in object.employees.all %}
+                <div class="project-card">
+                    <a href="{% url 'employee-details' employee.id %}">
+                        <img src="{{ employee.employee_picture.url }}" alt="pet img" class="project-image"/>
+                    </a>
+                    <p class="employee-name">Name: {{ employee.employee_name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

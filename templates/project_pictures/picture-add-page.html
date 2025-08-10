@@ -1,0 +1,12 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <div>
+        <h2>Add a photo to your projects</h2>
+        <form enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Add Photo</button>
+        </form>
+    </div>
+{% endblock %}

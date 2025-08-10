@@ -53,6 +53,7 @@ footer {
 h1 {
     font-size: 1.8rem;
     margin-bottom: 2rem;
+    padding-bottom: 1px;
 }
 
 .image-container {

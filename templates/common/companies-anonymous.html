@@ -1,0 +1,30 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Registered companies:</h1>
+    {% if companies %}
+        <div class="projects-container">
+            {% for company in companies %}
+                <div class="project-card">
+                    {% if company.company_logo %}
+                        <a href="{% url 'company-details' company.user.pk %}">
+                            <img src="{{ company.company_logo.url }}" alt="img" class="round-profile"/>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'company-details' company.user.pk %}">
+                            <img src="{% static 'images/person.png' %}" alt="img8" class="round-profile"/>
+                        </a>
+                    {% endif %}
+                    {% if company.company_name %}
+                        <p class="project-name">Company name: {{ company.company_name }}</p>
+                    {% else %}
+                        <p class="project-name">Company name: not given yet</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>There are currently no registered companies</p>
+    {% endif %}
+{% endblock %}

@@ -4,55 +4,30 @@ html, body {
 }
 
 .page-wrapper {
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 main {
     flex: 1;
-}
-
-footer {
-    text-align: right;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    font-size: 14px;
-}
-
-.searchbar {
+    min-height: 100%;
     display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 0 auto; /* centers it horizontally */
-    width: fit-content; /* shrinks form to content size */
+    flex-direction: column;
 }
 
-.searchbar button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-.searchbar button img {
-    width: 24px; /* adjust size if needed */
-    height: auto;
+h1 {
+    font-size: 1.8rem;
 }
 
 .home-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 100vh;
     padding: 1rem;
-}
-
-h1 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
 }
 
 .image-container {
@@ -63,9 +38,86 @@ h1 {
 }
 
 .image-container img {
-    max-width: 90%;
+    max-width: 100%;
     max-height: 70vh;
     object-fit: contain;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.searchbar button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.searchbar button img {
+    width: 24px;
+    height: auto;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.step-links-buttons {
+    cursor: default;
+    display: flex;
+    text-shadow: none;
+}
+
+.step-links-buttons a,
+.span.current {
+    font-size: 20px;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    text-decoration: none;
+    background-color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.step-links-buttons a:hover {
+    background-color: #3498db;
+}
+
+.step-links-buttons a:first-child,
+.step-links-buttons a:last-child {
+    margin: 2px;
+}
+
+.step-links-buttons a.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    font-size: 22px;
+    margin: 2.5px 0px 0px 8px;
+    padding: 0;
+    cursor: pointer;
+}
+
+footer {
+    text-align: right;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    font-size: 14px;
 }
 
 

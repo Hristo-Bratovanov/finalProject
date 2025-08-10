@@ -1,6 +1,6 @@
 .round-profile {
-  width: 120px;              /* or any size you prefer */
-  height: 120px;
+  width: 250px;              /* or any size you prefer */
+  height: 250px;
   border-radius: 50%;        /* makes it perfectly round */
   object-fit: cover;         /* ensures the image fills the box without distortion */
   border: 2px solid #ccc;    /* optional border */

@@ -1,0 +1,62 @@
+{% extends 'common/base.html' %}}
+{% load static %}
+
+{% block content %}
+    <div>
+        <h2>Employee Details</h2>
+        <div>
+            {% if employee.employee_picture %}
+                <img src="{{ employee.employee_picture.url }}" alt="employee-img" class="round-profile"/>
+            {% else %}
+                <img src="{% static 'images/person.png' %}" alt="employee-empy-img" class="round-profile"/>
+            {% endif %}
+
+            <p><strong>Name:</strong> {{ employee.employee_name }}</p>
+
+            {% if request.user == employee.user %}
+                <a href="{% url 'employee-edit' employee.pk %}" class="btn">Edit Employee</a>
+                <a href="{% url 'employee-delete' employee.pk %}" class="btn">Delete Employee</a>
+            {% endif %}
+        </div>
+        <br>
+        <div class="data-wrapper">
+            <div class="data">
+                <div class="data-item">
+                    <span class="label">Job level:</span>
+                    <span class="value">{{ employee.job_level }}</span>
+                </div>
+
+                <div class="data-item">
+                    <span class="label">Experience:</span>
+                    <span class="value">{{ employee.years_of_experience }} years</span>
+                </div>
+
+                <div class="data-item">
+                    <span class="label">Info:</span>
+                    <span class="value">{{ employee.about_employee }}</span>
+                </div>
+
+                <div class="data-item">
+                    <span class="label">Telephone:</span>
+                    <span class="value">{{ employee.phone_number }}</span>
+                </div>
+
+                <div class="data-item">
+                    <span class="label">E-Mail:</span>
+                    <span class="value">{{ employee.email }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Employee's projects:</h1>
+    <div class="projects-container">
+        {% for project in object.projects.all %}
+            <div class="project-card">
+                <a href="{% url 'project-details' project.slug %}">
+                    <img src="{{ project.project_photo.url }}" alt="Project image" class="project-image"/>
+                </a>
+                <p class="project-name">Project: {{ project.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

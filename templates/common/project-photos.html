@@ -1,22 +1,20 @@
 {% load static %}
 
 <div class="photo-card">
-
     {% if photo_page and request.user.pk == photo.user.pk %}
         <div class="button-wrapper">
-            <a href="{% url 'photo-edit' photo.id %}">
+            <a href="{% url 'picture-edit' photo.pk %}">
                 <img class="photo-edit-button" src="{% static '/images/edit-pen.jpg' %}" alt="edit button" title="Edit">
             </a>
-            <a href="{% url 'photo-delete' photo.id %}">
-                <img class="photo-delete-button" src="{% static '/images/delete-icon.jpg' %}" alt="bin button"
-                     title="Delete">
+            <a href="{% url 'picture-delete' photo.pk %}">
+                <img class="photo-delete-button" src="{% static '/images/delete-icon.jpg' %}" alt="bin button" title="Delete">
             </a>
         </div>
     {% endif %}
 
     <div class="photo-details-container">
         <div class="photo-card" id="{{ photo.id }}">
-            <img src="{{ photo.photo.url }}" alt="post" class="large-image">
+            <img src="{{ photo.picture.url }}" alt="post" class="large-image">
         </div>
     </div>
 
@@ -42,21 +40,21 @@
             <p><strong>Description:</strong> {{ photo.description }}</p>
         </div>
     {% else %}
-        <a href="{% url 'photo-details' photo.id %}">
+        <a href="{% url 'picture-details' photo.id %}">
             <h4>See details</h4>
         </a>
     {% endif %}
 
     {% if photo_page %}
-        <div class="comments-section">
+        <div>
             <p><strong>Comments section:</strong></p>
             {% for comment in comments %}
-                <div class="comment-text">
+                <div>
                     <p>
-                        <a href="{% url 'profile-details' comment.user.pk %}">{{ comment.user.profile.get_full_name }}:</a>
+                        <a href="{% url 'company-details' comment.user.pk %}">{{ comment.user.company_profile.company_name }}:</a>
                         {{ comment.text }}
                     </p>
-                    <span class="date">{{ comment.date_time_of_publication }}</span>
+                    <span>{{ comment.date_time_of_publication }}</span>
                 </div>
             {% endfor %}
         </div>
@@ -77,5 +75,4 @@
             <button type="submit">Post comment</button>
         </form>
     </div>
-
 </div>

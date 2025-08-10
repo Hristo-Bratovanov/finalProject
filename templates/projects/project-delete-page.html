@@ -1,16 +1,16 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-    <div class="container">
+    <div>
         <h2>Are you sure you want to delete this project?</h2>
         <p>This action cannot be undone. Your project and all related data will be permanently removed.</p>
 
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Delete</button>
+            <button type="submit" class="btn">Delete</button>
             <a href="javascript:history.back()">
-                <button type="button" class="cancel-btn">Go back</button>
+                <button type="button" class="btn">Go back</button>
             </a>
         </form>
     </div>

@@ -1,12 +1,12 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-    <div class="form-container">
-        <h2>Add Your Project</h2>
+    <div>
+        <h2>Add a project to your profile</h2>
         <form enctype="multipart/form-data" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Add</button>
+            <button type="submit" class="btn">Add Project</button>
         </form>
     </div>
 {% endblock %}
