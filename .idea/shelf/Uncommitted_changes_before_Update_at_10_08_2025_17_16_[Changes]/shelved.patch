@@ -1,0 +1,41 @@
+Index: projects/tests.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/projects/tests.py b/projects/tests.py
+new file mode 100644
+--- /dev/null	(date 1738515557876)
++++ b/projects/tests.py	(date 1738515557876)
+@@ -0,0 +1,3 @@
++from django.test import TestCase
++
++# Create your tests here.
+Index: employees/forms.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/employees/forms.py b/employees/forms.py
+new file mode 100644
+--- /dev/null	(date 1754253785450)
++++ b/employees/forms.py	(date 1754253785450)
+@@ -0,0 +1,14 @@
++from django import forms
++from employees.models import Employee
++
++
++class EmployeeBaseForm(forms.ModelForm):
++    class Meta:
++        model = Employee
++        exclude = ('user',)
++
++class EmployeeAddForm(EmployeeBaseForm):
++    pass
++
++class EmployeeEditForm(EmployeeBaseForm):
++    pass
+\ No newline at end of file
+diff --git a/finalProject/projects/tests.py b/project_pictures/tests.py
+rename from finalProject/projects/tests.py
+rename to project_pictures/tests.py
