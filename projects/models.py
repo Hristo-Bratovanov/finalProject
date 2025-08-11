@@ -49,7 +49,7 @@ class Project(models.Model):
         if not self.slug:
             self.slug = slugify(f'{self.name}-{self.id}')
 
-            super().save(*args, **kwargs)
+            Project.objects.filter(pk=self.pk).update(slug=self.slug)
 
     def __str__(self):
         return self.name

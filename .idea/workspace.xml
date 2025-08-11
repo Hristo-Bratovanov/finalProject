@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="correcting error messages">
+    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="changed title and home page text">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employees/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/employees/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employees/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/employees/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_pictures/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_pictures/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +214,9 @@
       <workItem from="1754775484879" duration="877000" />
       <workItem from="1754816490401" duration="5520000" />
       <workItem from="1754831826714" duration="5019000" />
-      <workItem from="1754838720664" duration="8268000" />
+      <workItem from="1754838720664" duration="8877000" />
+      <workItem from="1754929916125" duration="2971000" />
+      <workItem from="1754938884164" duration="5988000" />
     </task>
     <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
       <option name="closed" value="true" />
@@ -372,7 +378,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754852535753</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="changed title and home page text">
+      <option name="closed" value="true" />
+      <created>1754855342974</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1754855342974</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,6 +424,7 @@
     <MESSAGE value="new app structure" />
     <MESSAGE value="changes to forms.py and tests.py" />
     <MESSAGE value="correcting error messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="correcting error messages" />
+    <MESSAGE value="changed title and home page text" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed title and home page text" />
   </component>
 </project>
