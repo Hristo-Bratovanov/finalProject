@@ -40,7 +40,8 @@ finalProject е приложение, в което фирми (замислен
  sqlparse==0.5.3  
  tzdata==2025.1  
  whitenoise==6.9.0  
-+ След инсталиране на зависимостите създайте база данни.
-+ След това изпълнете миграцийте: python manage.py makemigrations, python manage.py migrate  
-Готово. Проектът би трябвало да работи.
++ След инсталиране на зависимостите създайте база данни
++ След това изпълнете миграцийте: python manage.py makemigrations, python manage.py migrate
+  
+Готово. Приложението би трябвало да работи.
 
