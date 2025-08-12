@@ -1,3 +1,5 @@
+import os
+
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.template.defaultfilters import slugify
@@ -50,6 +52,12 @@ class Project(models.Model):
             self.slug = slugify(f'{self.name}-{self.id}')
 
             Project.objects.filter(pk=self.pk).update(slug=self.slug)
+
+    def delete(self, *args, **kwargs):
+        if self.project_photo:
+            if os.path.isfile(self.project_photo.path):
+                os.remove(self.project_photo.path)
+        super().delete(*args, **kwargs)
 
     def __str__(self):
         return self.name

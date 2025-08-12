@@ -102,11 +102,6 @@
     display: block;
 }
 
-.likes {
-    font-weight: bold;
-    margin-top: 0.5rem;
-}
-
 .comment-wrapper {
     display: flex;
     justify-content: center;

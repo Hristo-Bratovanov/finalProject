@@ -4,9 +4,8 @@ from django.views.generic import ListView
 from pyperclip import copy
 
 from accounts.models import CompanyProfile
-from common.forms import CommentForm, SearchForm
+from common.forms import CommentForm
 from common.mixins import NeverCacheMixin
-from common.models import Like
 from project_pictures.models import ProjectPicture
 from projects.models import Project
 
@@ -24,22 +23,6 @@ class CompanyList(NeverCacheMixin, ListView):
 
     def get_queryset(self):
         return CompanyProfile.objects.filter(user__is_superuser=False)
-
-@login_required
-def likes_functionality(request, photo_id: int):
-    liked_object = Like.objects.filter(
-        to_photo_id=photo_id,
-        user=request.user,
-    ).first()
-
-    if liked_object:
-        liked_object.delete()
-    else:
-        like = Like(to_photo_id=photo_id, user=request.user)
-        like.save()
-
-    return redirect(request.META.get('HTTP_REFERER') + f'#{photo_id}')
-
 
 def share_functionality(request, photo_id: int):
     picture_url = request.build_absolute_uri(resolve_url('picture-details', photo_id))

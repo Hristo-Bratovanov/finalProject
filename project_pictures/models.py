@@ -1,3 +1,5 @@
+import os
+
 from django.contrib.auth import get_user_model
 from django.core.validators import MinLengthValidator
 from django.db import models
@@ -31,3 +33,9 @@ class ProjectPicture(models.Model):
         UserModel,
         on_delete=models.CASCADE,
     )
+
+    def delete(self, *args, **kwargs):
+        if self.picture:
+            if os.path.isfile(self.picture.path):
+                os.remove(self.picture.path)
+        super().delete(*args, **kwargs)

@@ -20,20 +20,11 @@
 
     <div class="actionBtns">
         <div class="left">
-            <a href="{% url 'like' photo.id %}">
-                {% if photo.has_liked %}
-                    <i class="fa-solid fa-heart" style="color: #ed4040;"></i>
-                {% else %}
-                    <i class="fa-regular fa-heart"></i>
-                {% endif %}
-            </a>
             <a href="{% url 'share' photo.id %}">
                 <i class="fa-solid fa-share"></i>
             </a>
         </div>
     </div>
-
-    <p class="likes">{{ photo.like_set.count }} likes</p>
 
     {% if photo_page %}
         <div class="description-box">

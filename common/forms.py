@@ -10,13 +10,3 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'text': forms.Textarea(attrs={'placeholder': 'Add a comment...'}),
         }
-
-class SearchForm(forms.Form):
-    company_name = forms.CharField(
-        required=False,
-        widget=forms.TextInput(
-            attrs={
-                'placeholder': 'Filter by company name...',
-            }
-        )
-    )

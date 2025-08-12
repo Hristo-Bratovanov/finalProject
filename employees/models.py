@@ -1,3 +1,5 @@
+import os
+
 from django.contrib.auth import get_user_model
 from django.db import models
 from employees.validators import validate_phone_number
@@ -38,6 +40,12 @@ class Employee(models.Model):
         related_name='employees',
         blank=True,
     )
+
+    def delete(self, *args, **kwargs):
+        if self.employee_picture:
+            if os.path.isfile(self.employee_picture.path):
+                os.remove(self.employee_picture.path)
+        super().delete(*args, **kwargs)
 
     def __str__(self):
         return self.employee_name

@@ -6,4 +6,4 @@ class AccountsConfig(AppConfig):
     name = 'accounts'
 
     def ready(self):
-        from accounts.signals import create_profile
+        from accounts.signals import create_profile, create_default_admin_groups

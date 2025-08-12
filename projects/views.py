@@ -40,12 +40,6 @@ class ProjectDetailsView(NeverCacheMixin, DetailView):
 
         all_photos = context['project'].pictures.all()
 
-        for photo in all_photos:
-            if self.request.user.is_authenticated:
-                photo.has_liked = photo.like_set.filter(user=self.request.user).exists()
-            else:
-                photo.has_liked = False
-
         context['all_photos'] = all_photos
         return context
 

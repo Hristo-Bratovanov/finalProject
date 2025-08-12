@@ -1,3 +1,5 @@
+import os
+
 from django.contrib.auth import get_user_model
 from django.db import models
 
@@ -26,6 +28,12 @@ class CompanyProfile(models.Model):
         primary_key=True,
         related_name='company_profile',
     )
+
+    def delete(self, *args, **kwargs):
+        if self.company_logo:
+            if os.path.isfile(self.company_logo.path):
+                os.remove(self.company_logo.path)
+        super().delete(*args, **kwargs)
 
     def __str__(self):
         return self.company_name

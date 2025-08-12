@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="changed title and home page text">
+    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="unit and integration tests added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employees/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/employees/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employees/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/employees/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_pictures/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models/app_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models/app_profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employees/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/employees/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_pictures/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_pictures/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/home-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/home-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/picture.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/picture.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/project-photos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/project-photos.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +225,9 @@
       <workItem from="1754831826714" duration="5019000" />
       <workItem from="1754838720664" duration="8877000" />
       <workItem from="1754929916125" duration="2971000" />
-      <workItem from="1754938884164" duration="5988000" />
+      <workItem from="1754938884164" duration="7033000" />
+      <workItem from="1755024128558" duration="378000" />
+      <workItem from="1755025054246" duration="3073000" />
     </task>
     <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
       <option name="closed" value="true" />
@@ -386,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754855342974</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="unit and integration tests added">
+      <option name="closed" value="true" />
+      <created>1754945169234</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1754945169234</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,6 +444,7 @@
     <MESSAGE value="changes to forms.py and tests.py" />
     <MESSAGE value="correcting error messages" />
     <MESSAGE value="changed title and home page text" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed title and home page text" />
+    <MESSAGE value="unit and integration tests added" />
+    <option name="LAST_COMMIT_MESSAGE" value="unit and integration tests added" />
   </component>
 </project>

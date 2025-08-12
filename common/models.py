@@ -29,14 +29,3 @@ class Comment(models.Model):
         UserModel,
         on_delete=models.CASCADE,
     )
-
-class Like(models.Model):
-    to_photo = models.ForeignKey(
-        ProjectPicture,
-        on_delete=models.CASCADE,
-    )
-
-    user = models.ForeignKey(
-        UserModel,
-        on_delete=models.CASCADE,
-    )
