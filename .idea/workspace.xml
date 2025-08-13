@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="automatically delete media, admin groups creation">
+    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="templates update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/managers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/project-photos.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/project_pictures/picture-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/project_pictures/picture-details-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +213,7 @@
       <workItem from="1754938884164" duration="7033000" />
       <workItem from="1755024128558" duration="378000" />
       <workItem from="1755025054246" duration="4864000" />
-      <workItem from="1755105988836" duration="2248000" />
+      <workItem from="1755105988836" duration="3529000" />
     </task>
     <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
       <option name="closed" value="true" />
@@ -402,7 +399,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755028399956</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="templates update">
+      <option name="closed" value="true" />
+      <created>1755108437326</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1755108437326</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,6 +448,7 @@
     <MESSAGE value="changed title and home page text" />
     <MESSAGE value="unit and integration tests added" />
     <MESSAGE value="automatically delete media, admin groups creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="automatically delete media, admin groups creation" />
+    <MESSAGE value="templates update" />
+    <option name="LAST_COMMIT_MESSAGE" value="templates update" />
   </component>
 </project>

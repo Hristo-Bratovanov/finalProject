@@ -1,4 +1,4 @@
-@import "./profile.css";
-@import "./project.css";
-@import "./photo.css";
+@import "company.css";
+@import "project.css";
+@import "picture.css";
 @import "home-page.css";
