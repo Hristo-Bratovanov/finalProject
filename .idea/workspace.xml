@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="templates update">
+    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="updated static files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +214,7 @@
       <workItem from="1754938884164" duration="7033000" />
       <workItem from="1755024128558" duration="378000" />
       <workItem from="1755025054246" duration="4864000" />
-      <workItem from="1755105988836" duration="3529000" />
+      <workItem from="1755105988836" duration="4716000" />
     </task>
     <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
       <option name="closed" value="true" />
@@ -407,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755108437326</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="updated static files">
+      <option name="closed" value="true" />
+      <created>1755109636729</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1755109636729</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,6 +458,7 @@
     <MESSAGE value="unit and integration tests added" />
     <MESSAGE value="automatically delete media, admin groups creation" />
     <MESSAGE value="templates update" />
-    <option name="LAST_COMMIT_MESSAGE" value="templates update" />
+    <MESSAGE value="updated static files" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated static files" />
   </component>
 </project>
