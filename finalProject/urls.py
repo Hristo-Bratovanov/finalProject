@@ -30,7 +30,4 @@ urlpatterns = [
     path('employees/', include('employees.urls')),
 ]
 
-debug_env = os.getenv('DEBUG', 'False').lower()
-if debug_env == 'false':
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
