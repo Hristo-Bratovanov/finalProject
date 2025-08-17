@@ -161,12 +161,8 @@ AZURE_ACCOUNT_NAME = "passionforconstruction" # From environment variable
 AZURE_ACCOUNT_KEY = "BVdyAlcoe7VhUYa7OFqncIr0fiJAJXKZs/A0bD1DS4xjgQDd9/ypCqaEaJnetZyzKxk9xSJYZAjL+AStdtlNmA==" # From environment variable
 AZURE_CONTAINER = "media" # The name of the container you created
 
-# This generates the URL for your media files.
-AZURE_URL_EXPIRATION_SECS = None # To make media files public
-AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-
 # This is the base URL for your media files.
-MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/'
+MEDIA_URL = f"https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
