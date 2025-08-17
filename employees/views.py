@@ -42,6 +42,11 @@ class EmployeeEditView(NeverCacheMixin, LoginRequiredMixin, UserPassesTestMixin,
     template_name = 'employees/employee-edit-page.html'
     context_object_name = 'employee'
 
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['projects'].queryset = Project.objects.filter(user=self.request.user)
+        return form
+
     def test_func(self):
         return self.request.user == self.get_object().user
 

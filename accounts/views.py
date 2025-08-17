@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model, login
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.views import LoginView, LogoutView
-from django.db.models import Count
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
@@ -74,6 +74,13 @@ class ProfileDeleteView(NeverCacheMixin, LoginRequiredMixin, UserPassesTestMixin
     model = UserModel
     template_name = 'accounts/company-delete-page.html'
     success_url = reverse_lazy('home')
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if hasattr(self.object, 'company_profile'):
+            self.object.company_profile.delete()
+        self.object.delete()
+        return HttpResponseRedirect(self.get_success_url())
 
     def test_func(self):
         user = get_object_or_404(UserModel, pk=self.kwargs['pk'])

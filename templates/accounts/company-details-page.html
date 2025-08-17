@@ -54,28 +54,34 @@
     </div>
     <br>
     <h1>Company's projects:</h1>
-    <div class="projects-container">
-        {% for project in object.projects.all %}
-            <div class="project-card">
-                <a href="{% url 'project-details' project.slug %}">
-                    <img src="{{ project.project_photo.url }}" alt="Project image" class="project-image"
-                         title="view project details and photos"/>
-                </a>
-                <p class="project-name">Project: {{ project.name }}</p>
-            </div>
-        {% endfor %}
-    </div>
+    {% if object.projects.all %}
+        <div class="projects-container">
+            {% for project in object.projects.all %}
+                <div class="project-card">
+                    <a href="{% url 'project-details' project.slug %}">
+                        <img src="{{ project.project_photo.url }}" alt="Project image" class="project-image"
+                             title="view project details and photos"/>
+                    </a>
+                    <p class="project-name">Project: {{ project.name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Add your first project</p>
+    {% endif %}
+    <h1>Company's employees:</h1>
     {% if object.employees.all %}
-        <h2>Company's employees:</h2>
         <div class="projects-container">
             {% for employee in object.employees.all %}
                 <div class="project-card">
                     <a href="{% url 'employee-details' employee.id %}">
-                        <img src="{{ employee.employee_picture.url }}" alt="pet img" class="project-image"/>
+                        <img src="{{ employee.employee_picture.url }}" alt="employee_img" class="project-image"/>
                     </a>
                     <p class="employee-name">Name: {{ employee.employee_name }}</p>
                 </div>
             {% endfor %}
         </div>
+    {% else %}
+        <p>Add your first employee</p>
     {% endif %}
 {% endblock %}
