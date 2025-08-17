@@ -25,7 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY', config('SECRET_KEY'))
-# django-insecure-%w2yyexs@x4r0ih0yob97o#$ex_=m^xj79o#kflbhti9q6&m_t
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', config('DEBUG')) == 'True'
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ] + PROJECT_APPS
 
 MIDDLEWARE = [
@@ -146,12 +146,27 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media_files'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+# This tells Django to use the Azure Storage backend for any file operations.
+DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+
+# These are the credentials for your Azure Storage Account
+AZURE_ACCOUNT_NAME = "passionforconstruction" # From environment variable
+AZURE_ACCOUNT_KEY = "BVdyAlcoe7VhUYa7OFqncIr0fiJAJXKZs/A0bD1DS4xjgQDd9/ypCqaEaJnetZyzKxk9xSJYZAjL+AStdtlNmA==" # From environment variable
+AZURE_CONTAINER = "media" # The name of the container you created
+
+# This generates the URL for your media files.
+AZURE_URL_EXPIRATION_SECS = None # To make media files public
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+
+# This is the base URL for your media files.
+MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
