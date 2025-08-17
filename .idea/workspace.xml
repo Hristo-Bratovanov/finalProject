@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="serving media files in production">
-      <change afterPath="$PROJECT_DIR$/common/azure_storage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2025_17_16_[Changes]/shelved.patch" beforeDir="false" />
+    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="signed_url project pictures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_pictures/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/project_pictures/picture-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/project_pictures/picture-details-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/projects/project-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-details-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +223,7 @@
       <workItem from="1755429528981" duration="896000" />
       <workItem from="1755434425539" duration="2695000" />
       <workItem from="1755442439265" duration="4062000" />
-      <workItem from="1755462261155" duration="1550000" />
+      <workItem from="1755462261155" duration="3229000" />
     </task>
     <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
       <option name="closed" value="true" />
@@ -486,7 +481,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755442871935</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="signed_url project pictures">
+      <option name="closed" value="true" />
+      <created>1755464015770</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1755464015770</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +511,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="PermissionsMixin, Forms and Registration" />
     <MESSAGE value="UserModel, ProfileModel, Forms and Registration" />
     <MESSAGE value="repairing the admin functionality" />
     <MESSAGE value="creating register, login and logout views" />
@@ -533,6 +535,7 @@
     <MESSAGE value="updated templates" />
     <MESSAGE value="employee edit page, pictures admin, company logo delete method" />
     <MESSAGE value="serving media files in production" />
-    <option name="LAST_COMMIT_MESSAGE" value="serving media files in production" />
+    <MESSAGE value="signed_url project pictures" />
+    <option name="LAST_COMMIT_MESSAGE" value="signed_url project pictures" />
   </component>
 </project>
