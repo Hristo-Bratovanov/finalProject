@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="signed_url project pictures">
+    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="changed requirements.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/azure_storage.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/finalProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_pictures/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/project_pictures/picture-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/project_pictures/picture-details-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/projects/project-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-details-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +228,9 @@
       <workItem from="1755429528981" duration="896000" />
       <workItem from="1755434425539" duration="2695000" />
       <workItem from="1755442439265" duration="4062000" />
-      <workItem from="1755462261155" duration="3229000" />
+      <workItem from="1755462261155" duration="3761000" />
+      <workItem from="1755466330802" duration="88000" />
+      <workItem from="1755545501851" duration="884000" />
     </task>
     <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
       <option name="closed" value="true" />
@@ -489,7 +496,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755464015770</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="correcting settings">
+      <option name="closed" value="true" />
+      <created>1755465668920</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1755465668920</updated>
+    </task>
+    <task id="LOCAL-00035" summary="changed requirements.txt">
+      <option name="closed" value="true" />
+      <created>1755465755980</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1755465755980</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,8 +534,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="UserModel, ProfileModel, Forms and Registration" />
-    <MESSAGE value="repairing the admin functionality" />
     <MESSAGE value="creating register, login and logout views" />
     <MESSAGE value="AppUser forms, Logout view and nav.html" />
     <MESSAGE value="first and second name to only name" />
@@ -536,6 +557,8 @@
     <MESSAGE value="employee edit page, pictures admin, company logo delete method" />
     <MESSAGE value="serving media files in production" />
     <MESSAGE value="signed_url project pictures" />
-    <option name="LAST_COMMIT_MESSAGE" value="signed_url project pictures" />
+    <MESSAGE value="correcting settings" />
+    <MESSAGE value="changed requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed requirements.txt" />
   </component>
 </project>

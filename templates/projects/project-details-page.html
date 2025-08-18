@@ -48,7 +48,7 @@
             {% for photo in object.pictures.all %}
                 <div class="project--pictures-card">
                     <a href="{% url 'picture-details' photo.id %}">
-                        <img src="{{ photo.signed_url }}" alt="project_img" class="project-picture" title="See photo details"/>
+                        <img src="{{ photo.picture.url }}" alt="project_img" class="project-picture" title="See photo details"/>
                     </a>
                 </div>
             {% endfor %}

@@ -161,8 +161,11 @@ AZURE_ACCOUNT_NAME = os.getenv("AZURE_ACCOUNT_NAME")
 AZURE_ACCOUNT_KEY = os.getenv("AZURE_ACCOUNT_KEY")
 AZURE_CONTAINER = os.getenv("AZURE_CONTAINER")
 
+# This is the key setting to enable automatic SAS tokens
+AZURE_URL_EXPIRATION_SECS = 3600 # URLs will be valid for 1 hour (3600 seconds)
+
 # This is the base URL for your media files.
-MEDIA_URL = f"https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/"
+# MEDIA_URL = f"https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
