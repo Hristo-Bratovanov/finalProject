@@ -148,18 +148,15 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # MEDIA_URL = '/media/'
 
-MEDIA_ROOT = BASE_DIR / 'media_files'
+# MEDIA_ROOT = BASE_DIR / 'media_files'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-# This tells Django to use the Azure Storage backend for any file operations.
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-
-# These are the credentials for your Azure Storage Account
-AZURE_ACCOUNT_NAME = os.getenv("AZURE_ACCOUNT_NAME")
-AZURE_ACCOUNT_KEY = os.getenv("AZURE_ACCOUNT_KEY")
-AZURE_CONTAINER = os.getenv("AZURE_CONTAINER")
+AZURE_ACCOUNT_NAME = config("AZURE_ACCOUNT_NAME")
+AZURE_ACCOUNT_KEY = config("AZURE_ACCOUNT_KEY")
+AZURE_CONTAINER = config("AZURE_CONTAINER")
 
 # This is the key setting to enable automatic SAS tokens
 AZURE_URL_EXPIRATION_SECS = 3600 # URLs will be valid for 1 hour (3600 seconds)

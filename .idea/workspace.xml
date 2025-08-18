@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="changed requirements.txt">
+    <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="updated settings.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/azure_storage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_pictures/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/project_pictures/picture-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/project_pictures/picture-details-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/projects/project-details-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects/project-details-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +224,7 @@
       <workItem from="1755442439265" duration="4062000" />
       <workItem from="1755462261155" duration="3761000" />
       <workItem from="1755466330802" duration="88000" />
-      <workItem from="1755545501851" duration="884000" />
+      <workItem from="1755545501851" duration="2629000" />
     </task>
     <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
       <option name="closed" value="true" />
@@ -512,7 +506,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755465755980</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="updated settings.py">
+      <option name="closed" value="true" />
+      <created>1755546428838</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1755546428838</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +536,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creating register, login and logout views" />
     <MESSAGE value="AppUser forms, Logout view and nav.html" />
     <MESSAGE value="first and second name to only name" />
     <MESSAGE value="all templates are rewritten without the posts template" />
@@ -559,6 +560,7 @@
     <MESSAGE value="signed_url project pictures" />
     <MESSAGE value="correcting settings" />
     <MESSAGE value="changed requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed requirements.txt" />
+    <MESSAGE value="updated settings.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated settings.py" />
   </component>
 </project>
