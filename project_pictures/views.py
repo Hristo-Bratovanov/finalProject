@@ -31,8 +31,9 @@ class PictureAddView(NeverCacheMixin, LoginRequiredMixin, CreateView):
         )
 
     def form_valid(self, form):
-        photo = form.save(commit=False)
-        photo.user = self.request.user
+        # Assign the user to the form's instance BEFORE it is saved.
+        form.instance.user = self.request.user
+        # Now, call the parent method which will handle saving the object correctly.
         return super().form_valid(form)
 
 

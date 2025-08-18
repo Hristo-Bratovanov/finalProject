@@ -36,7 +36,7 @@ class ProjectPicture(models.Model):
     )
 
     def delete(self, *args, **kwargs):
-        if self.picture:
-            if os.path.isfile(self.picture.path):
-                os.remove(self.picture.path)
+        # This will correctly delete the file from Azure Blob Storage
+        self.picture.delete(save=False)
+        # Now, call the parent method to delete the database record
         super().delete(*args, **kwargs)

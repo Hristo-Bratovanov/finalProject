@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="47c14318-0533-4810-bd7c-c5973a904b2d" name="Changes" comment="updated settings.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_pictures/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_pictures/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_pictures/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +226,7 @@
       <workItem from="1755442439265" duration="4062000" />
       <workItem from="1755462261155" duration="3761000" />
       <workItem from="1755466330802" duration="88000" />
-      <workItem from="1755545501851" duration="2629000" />
+      <workItem from="1755545501851" duration="3873000" />
     </task>
     <task id="LOCAL-00001" summary="PermissionsMixin, Forms and Registration">
       <option name="closed" value="true" />
@@ -514,7 +516,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755546428838</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="updated settings.py">
+      <option name="closed" value="true" />
+      <created>1755548315806</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1755548315806</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
