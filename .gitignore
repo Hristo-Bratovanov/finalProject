@@ -9,7 +9,6 @@
 .env
 
 # Django
-/staticfiles/
 /media_files/
 
 
