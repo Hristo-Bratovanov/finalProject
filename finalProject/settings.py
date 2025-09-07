@@ -151,7 +151,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-DEFAULT_FILE_STORAGE = "finalProject.finalProject.storage_backends.AzureMediaStorage"
+DEFAULT_FILE_STORAGE = "finalProject.storage_backends.AzureMediaStorage"
 AZURE_ACCOUNT_NAME = config("AZURE_ACCOUNT_NAME")
 AZURE_ACCOUNT_KEY = config("AZURE_ACCOUNT_KEY")
 AZURE_CONTAINER = config("AZURE_CONTAINER")
