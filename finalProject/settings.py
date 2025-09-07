@@ -146,8 +146,6 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-MEDIA_URL = f"https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/"
-
 # MEDIA_ROOT = BASE_DIR / 'media_files'
 
 # Default primary key field type
@@ -162,7 +160,7 @@ AZURE_CONTAINER = config("AZURE_CONTAINER")
 AZURE_URL_EXPIRATION_SECS = 3600 # URLs will be valid for 1 hour (3600 seconds)
 
 # This is the base URL for your media files.
-# MEDIA_URL = f"https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/"
+MEDIA_URL = f"https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
