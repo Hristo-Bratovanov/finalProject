@@ -26,9 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', config('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Set DEBUG to False in production by setting the DEBUG environment variable to 'False'
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = []
+# Add your Azure app service URL and any custom domains here
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
+
 
 # Application definition
 
@@ -46,12 +49,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # Whitenoise for static files - MUST be before contrib.staticfiles
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'storages',
 ] + PROJECT_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # Whitenoise Middleware - place it right after SecurityMiddleware
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -65,8 +72,7 @@ ROOT_URLCONF = 'finalProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,31 +133,43 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# --- Static files (CSS, JavaScript, Images) handled by Whitenoise ---
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
+# Use Whitenoise to serve static files in production
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_URL = 'static/'
 
-# MEDIA_ROOT = BASE_DIR / 'media_files'
+# --- Media files (User uploaded content) configuration ---
+# Use environment variables to keep your credentials secure
+# In production, set AZURE_CONNECTION_STRING. In development, leave it blank.
+AZURE_CONNECTION_STRING = os.getenv('AZURE_CONNECTION_STRING', config('AZURE_CONNECTION_STRING', default=None))
+
+if AZURE_CONNECTION_STRING:
+    # --- PRODUCTION MEDIA CONFIG (Azure Blob Storage) ---
+    DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+    AZURE_CONTAINER = os.getenv('AZURE_CONTAINER', config('AZURE_CONTAINER'))
+
+    # This is the key setting to enable automatic SAS tokens for private containers
+    AZURE_URL_EXPIRATION_SECS = 3600  # URLs will be valid for 1 hour
+
+    # The account name is needed for the MEDIA_URL
+    AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME', config('AZURE_ACCOUNT_NAME'))
+    MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/'
+
+else:
+    # --- DEVELOPMENT MEDIA CONFIG (Local Storage) ---
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
-DEFAULT_FILE_STORAGE = "finalProject.storage_backends.AzureMediaStorage"
-AZURE_ACCOUNT_NAME = config("AZURE_ACCOUNT_NAME")
-AZURE_ACCOUNT_KEY = config("AZURE_ACCOUNT_KEY")
-AZURE_CONTAINER = config("AZURE_CONTAINER")
-
-# This is the key setting to enable automatic SAS tokens
-AZURE_URL_EXPIRATION_SECS = 3600 # URLs will be valid for 1 hour (3600 seconds)
-
-# This is the base URL for your media files.
-MEDIA_URL = f"https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -160,4 +178,3 @@ AUTH_USER_MODEL = 'accounts.AppUser'
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 
 LOGOUT_REDIRECT_URL = reverse_lazy('home')
-
