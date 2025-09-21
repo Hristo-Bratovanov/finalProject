@@ -1,3 +1,5 @@
+import logging
+
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
@@ -9,22 +11,29 @@ from projects.forms import ProjectAddForm, ProjectEditForm, ProjectDeleteForm
 from projects.models import Project
 
 
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
+
 class ProjectAddView(NeverCacheMixin, LoginRequiredMixin, CreateView):
     model = Project
     form_class = ProjectAddForm
     template_name = 'projects/project-add-page.html'
 
     def form_valid(self, form):
+        logger.error(f"Form is valid. Received files: {self.request.FILES}")
         project = form.save(commit=False)
         project.user = self.request.user
         return super().form_valid(form)
 
+    def form_invalid(self, form):
+        # This will log any errors if the form fails validation
+        logger.error(f"Form is invalid. Errors: {form.errors}")
+        return super().form_invalid(form)
+
     def get_success_url(self):
         return reverse_lazy(
             'company-details',
-            kwargs={
-                'pk': self.request.user.pk
-            }
+            kwargs={'pk': self.request.user.pk}
         )
 
 
