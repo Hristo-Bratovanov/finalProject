@@ -142,20 +142,30 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-# Check for the Azure connection string to determine storage backend
-AZURE_CONNECTION_STRING = config("AZURE_CONNECTION_STRING", default=None)
+# --- FORCED DEBUGGING BLOCK ---
+# We will print directly to the log stream to see what the app sees at startup.
+print("--- SETTINGS.PY DEBUG START ---")
+connection_string_from_config = config("AZURE_CONNECTION_STRING", default=None)
+print(f"Value of AZURE_CONNECTION_STRING from config(): '{connection_string_from_config}'")
+# --- END FORCED DEBUGGING BLOCK ---
 
-if AZURE_CONNECTION_STRING:
+
+# Check for the Azure connection string to determine storage backend
+if connection_string_from_config:
+    print("CONNECTION STRING FOUND. Configuring for Azure Storage.")
     # Production settings for Azure Blob Storage
     DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
     AZURE_ACCOUNT_NAME = config("AZURE_ACCOUNT_NAME")
     AZURE_CONTAINER = config("AZURE_CONTAINER")
-    AZURE_URL_EXPIRATION_SECS = 3600  # SAS tokens valid for 1 hour
+    AZURE_URL_EXPIRATION_SECS = 3600
     MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
 else:
+    print("CONNECTION STRING NOT FOUND. Configuring for Local Media.")
     # Local development settings
     MEDIA_URL = '/media/'
     MEDIA_ROOT = BASE_DIR / 'media'
+
+print("--- SETTINGS.PY DEBUG END ---")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
