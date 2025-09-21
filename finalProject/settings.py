@@ -10,9 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
-
 from pathlib import Path
-
 from decouple import config
 from django.urls import reverse_lazy
 
@@ -23,18 +21,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', config('SECRET_KEY'))
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# Set DEBUG to False in production by setting the DEBUG environment variable to 'False'
-DEBUG = os.getenv('DEBUG', 'True') == 'True'
+# Reads 'False' or '0' from env vars as False. Defaults to False for safety.
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 # Add your Azure app service URL and any custom domains here
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
+# Decouple can handle comma-separated values directly from the env var
+ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', default='127.0.0.1,localhost').split(',')
 
 # This tells Django to trust POST requests coming from your Azure domain
-# It dynamically builds the list from your ALLOWED_HOSTS for convenience
-CSRF_TRUSTED_ORIGINS = [f"https://{host}" for host in ALLOWED_HOSTS if host not in ['127.0.0.1', 'localhost']]
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = [f"https://{host}" for host in ALLOWED_HOSTS if host not in ['127.0.0.1', 'localhost']]
 # If you prefer to be explicit, you can do this instead:
 # CSRF_TRUSTED_ORIGINS = ['https://your-app-name.azurewebsites.net']
 
@@ -94,18 +93,16 @@ WSGI_APPLICATION = 'finalProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv('DB_NAME', config('DB_NAME')),
-        "USER": os.getenv('DB_USER', config('DB_USER')),
-        "PASSWORD": os.getenv('DB_PASS', config('DB_PASS')),
-        "HOST": os.getenv('DB_HOST', config('DB_HOST')),
-        "PORT": os.getenv('DB_PORT', config('DB_PORT')),
+        "NAME": config('DB_NAME'),
+        "USER": config('DB_USER'),
+        "PASSWORD": config('DB_PASS'),
+        "HOST": config('DB_HOST'),
+        "PORT": config('DB_PORT', cast=int),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -128,51 +125,37 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
+USE_I1N = True
 USE_TZ = True
 
 
 # --- Static files (CSS, JavaScript, Images) handled by Whitenoise ---
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
+# --- STATIC AND MEDIA FILE CONFIGURATION ---
+
+STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = (
-    BASE_DIR / 'static',
-)
-# Use Whitenoise to serve static files in production
+STATICFILES_DIRS = [BASE_DIR / 'static']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-# --- Media files (User uploaded content) configuration ---
-# Use environment variables to keep your credentials secure
-# In production, set AZURE_CONNECTION_STRING. In development, leave it blank.
-
-AZURE_CONNECTION_STRING = os.getenv('AZURE_CONNECTION_STRING', config('AZURE_CONNECTION_STRING', default=None))
+# Check for the Azure connection string to determine storage backend
+AZURE_CONNECTION_STRING = config("AZURE_CONNECTION_STRING", default=None)
 
 if AZURE_CONNECTION_STRING:
-    # --- PRODUCTION MEDIA CONFIG (Azure Blob Storage) ---
+    # Production settings for Azure Blob Storage
     DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-    AZURE_CONTAINER = os.getenv('AZURE_CONTAINER', config('AZURE_CONTAINER'))
-
-    # This is the key setting to enable automatic SAS tokens for private containers
-    AZURE_URL_EXPIRATION_SECS = 3600  # URLs will be valid for 1 hour
-
-    # The account name is needed for the MEDIA_URL
-    AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME', config('AZURE_ACCOUNT_NAME'))
-    MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/'
-
+    AZURE_ACCOUNT_NAME = config("AZURE_ACCOUNT_NAME")
+    AZURE_CONTAINER = config("AZURE_CONTAINER")
+    AZURE_URL_EXPIRATION_SECS = 3600  # SAS tokens valid for 1 hour
+    MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
 else:
-    # --- DEVELOPMENT MEDIA CONFIG (Local Storage) ---
+    # Local development settings
     MEDIA_URL = '/media/'
     MEDIA_ROOT = BASE_DIR / 'media'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -184,3 +167,8 @@ AUTH_USER_MODEL = 'accounts.AppUser'
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 
 LOGOUT_REDIRECT_URL = reverse_lazy('home')
+
+# In production, ensure cookies are only sent over a secure connection.
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
