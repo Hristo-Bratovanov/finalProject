@@ -10,7 +10,7 @@ UserModel = get_user_model()
 
 class ProjectPicture(models.Model):
     picture = models.ImageField(
-        upload_to=''
+        upload_to='projects_photos/'
     )
 
     description = models.TextField(

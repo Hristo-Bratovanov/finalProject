@@ -15,7 +15,7 @@ class Employee(models.Model):
         ('Team Leader', 'Team Leader'),
     ]
 
-    employee_picture = models.ImageField(upload_to='', null=True, blank=True)
+    employee_picture = models.ImageField(upload_to='employees/', null=True, blank=True)
 
     employee_name = models.CharField(max_length=50)
 

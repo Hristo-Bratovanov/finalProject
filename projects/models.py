@@ -12,7 +12,7 @@ class Project(models.Model):
     )
 
     project_photo = models.ImageField(
-        upload_to='',
+        upload_to='projects/',
     )
 
     description = models.TextField(

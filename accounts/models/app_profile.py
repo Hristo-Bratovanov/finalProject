@@ -16,7 +16,7 @@ class CompanyProfile(models.Model):
 
     company_name = models.CharField(max_length=100)
 
-    company_logo = models.ImageField(upload_to='')
+    company_logo = models.ImageField(upload_to='company_logos/')
 
     industry = models.CharField(max_length=100, choices=CHOICES_INDUSTRY)
 
