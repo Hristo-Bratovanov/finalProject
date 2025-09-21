@@ -32,6 +32,11 @@ DEBUG = os.getenv('DEBUG', 'True') == 'True'
 # Add your Azure app service URL and any custom domains here
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
 
+# This tells Django to trust POST requests coming from your Azure domain
+# It dynamically builds the list from your ALLOWED_HOSTS for convenience
+CSRF_TRUSTED_ORIGINS = [f"https://{host}" for host in ALLOWED_HOSTS if host not in ['127.0.0.1', 'localhost']]
+# If you prefer to be explicit, you can do this instead:
+# CSRF_TRUSTED_ORIGINS = ['https://your-app-name.azurewebsites.net']
 
 # Application definition
 
@@ -148,6 +153,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # --- Media files (User uploaded content) configuration ---
 # Use environment variables to keep your credentials secure
 # In production, set AZURE_CONNECTION_STRING. In development, leave it blank.
+
 AZURE_CONNECTION_STRING = os.getenv('AZURE_CONNECTION_STRING', config('AZURE_CONNECTION_STRING', default=None))
 
 if AZURE_CONNECTION_STRING:
